@@ -1,105 +1,161 @@
 ---
 title: 'Settings'
-description: 'Configure your AI agent behavior and appearance'
+description: 'Configure your AI Agent behavior and preferences'
 ---
 
+The Settings page allows you to configure your AI Agent's behavior, name, and operational modes. Settings are saved automatically and applied immediately.
 
+## Agent Information
 
-## General
+### Agent Name
 
-This tab displays the AI agent ID, character count, agent name, credit limit, and options to delete the agent or conversations.
+**Edit your agent name**
+- Click the agent name to edit it inline
+- Changes are saved automatically
+- The name appears in the agent dashboard and can be used for identification
 
-The Credit Limit feature allows you to cap the maximum credits this agent can consume from your workspace allocation.
+**Last Updated**
+- Shows when the agent was last modified
+- Updates automatically when you make changes to any setting
+
+## AI Mode
+
+Control how your agent handles incoming conversations.
+
+### Mode Options
+
+**AI Enabled** (Default)
+- Agent automatically responds to customer queries using AI
+- Uses training data to provide relevant answers
+- Responds in real-time without human intervention
+- Best for: High-volume customer support, FAQ handling, 24/7 availability
+
+**Manual Mode**
+- Disables automatic AI responses
+- All conversations require human agent assignment
+- Useful for: Sensitive inquiries, complex cases, testing, or when AI needs supervision
+
+### How to Toggle Mode
+
+1. Navigate to Settings
+2. Find the **AI Mode** toggle
+3. Switch between **Enabled** and **Disabled**
+4. Changes apply immediately to new conversations
+
+<Note>
+Existing conversations maintain their current mode. The toggle affects new incoming conversations.
+</Note>
+
+## Off-Topic Guardrails
+
+Control whether your AI Agent should stay focused on topics related to your business or answer any question.
+
+### Guardrail Options
+
+**Stay On Topic** (Recommended)
+- Agent only answers questions related to your training data
+- Politely declines off-topic queries
+- Keeps conversations focused on your business
+- Best for: Customer support, product inquiries, business FAQs
+
+**Open**
+- Agent attempts to answer any question
+- Uses general knowledge beyond training data
+- More flexible but may stray from business topics
+- Best for: General assistants, flexible chatbots, exploratory use cases
+
+### How to Configure
+
+1. Navigate to Settings
+2. Find the **Off-Topic Guardrails** toggle
+3. Switch between **Stay On Topic** and **Open**
+4. Changes apply immediately
 
 <Warning>
-**DANGER ZONE**: Actions in this section are irreversible. Deleting an agent or its conversations cannot be undone.
+When set to "Open," your agent may answer questions unrelated to your business, which could use more credits and may not align with your support goals.
 </Warning>
 
-## AI
+## Quick Actions
 
-This section controls the agent's behavior and response patterns, including the language model, system instructions, temperature settings, and training history.
+### Train Agent
 
-### Instructions
+- **What it does**: Opens the Training overview page where you can add or manage training data
+- **When to use**: After gathering new content, creating FAQs, or when you want to update your agent's knowledge
+- **Click**: "Train Agent" button redirects to Sources section
 
-Define how your AI agent should behave when answering user questions. This section enables customization through either custom prompts or pre-defined templates to match your brand voice and interaction style.
+### Delete Agent
 
-**Key Guidelines:**
-- **Personality Definition**: Specify whether the agent should be formal, casual, or adopt a particular emotional tone
-- **Question Handling**: Determine response length and depth based on query type (factual vs. opinion-based)
-- **Missing Information**: Clarify what the agent should do when it lacks an answer
-- **URL Usage**: Define when and how to include links in responses
-- **Topic Focus**: Specialize the agent in specific domains through targeted instructions
+<Warning>
+**Danger Zone**: Deleting your agent is permanent and cannot be undone.
+</Warning>
 
-**Recommendations:**
+**What gets deleted:**
+- Agent configuration and settings
+- All training data (files, text content, Q&A pairs, website sources)
+- All conversations and message history
+- Deployment configurations
+- Analytics data
 
-**Do's:**
-- "Be clear and concise" when specifying behavior, tone, and style
-- Include specific response examples
-- Use plain language to ensure accurate interpretation
-- Test and refine prompts iteratively
+**Before deleting:**
+1. Ensure you have backups of any important data
+2. Remove the agent from your website if deployed
+3. Notify team members if the agent is shared
 
-**Don'ts:**
-- Avoid vague or overly general instructions
-- Don't use contradictory guidance
-- Don't overload prompts with excessive details
+**To delete an agent:**
+1. Scroll to the bottom of Settings
+2. Click **Delete Agent**
+3. Confirm deletion in the dialog
+4. Agent is permanently removed
 
-Reference [OpenAI's guide](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) and [Anthropic's guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) for detailed best practices.
+## Real-Time Updates
 
-### Model
+Settings changes are applied immediately without page refresh. The system uses WebSocket connections to sync updates across:
+- Multiple browser tabs
+- Team member sessions
+- Agent dashboard views
 
-Select from the latest OpenAI, Claude, Cohere, and Gemini models. Full model list available in the [Playground](/user-guides/agent/playground) documentation.
+When a setting changes, all connected sessions receive the update automatically.
 
-### Temperature
+## Settings Summary
 
-Temperature controls creativity in responses. A setting of 0.2 is recommended to maintain conservative answers grounded in your training sources.
+| Setting | Options | Default | Impact |
+|---------|---------|---------|--------|
+| **Agent Name** | Custom text | "New Agent" | Display name in dashboard |
+| **AI Mode** | Enabled / Manual | Enabled | How conversations are handled |
+| **Off-Topic Guardrails** | Stay On Topic / Open | Stay On Topic | Topic restriction |
 
-## Chat Interface
+## Best Practices
 
-Customize where the chat bubble appears, welcome messages, and chat icons.
+**Agent Name**
+- Use descriptive names like "Customer Support Bot" or "Product Expert"
+- Include purpose or department if you have multiple agents
+- Keep names concise and clear
 
-**Initial Message**: Displayed before and after the user opens the chat bubble. Supports customization per user.
+**AI Mode**
+- Start with AI Enabled for most use cases
+- Use Manual Mode temporarily during training or testing
+- Monitor conversations to ensure AI quality before full automation
 
-**Suggested Messages**: Quick-reply options reflecting your most frequently asked questions.
-
-### Content
-
-- **Text Placeholder**: Input field prompt text
-- **Collect Feedback**: Enable thumbs up/down rating buttons
-- **Regenerate Messages**: Display response regeneration button
-- **Footer**: Text shown at chat bottom (disclaimers, privacy links)
-- **Theme**: Light or Dark mode
-
-### Style
-
-- **Display Name**: Agent name shown to users
-- **Profile Picture**: Agent avatar
-- **Chat Icon**: Website widget icon
-- **User Message Color**: Customizable message styling
-- **Bubble Alignment**: Left or Right positioning
-- **Initial Messages Pop-up**: Auto-show timing (negative value disables)
-
-## Security
-
-Set domain restrictions for iframe embedding and configure rate limiting to restrict messages per device over specified time periods. Customize the rate-limit message displayed to users.
-
-## Notifications
-
-Configure email notifications: receive daily digests of submitted leads or conversation summaries. Support for multiple email addresses.
-
-## Webhooks
-
-Configure webhooks triggered by specific actions. Currently supports "lead submitted" events, which send POST requests containing conversation ID and form data (name, email, phone) to your specified API endpoint for third-party automation.
+**Off-Topic Guardrails**
+- Keep "Stay On Topic" enabled for customer-facing agents
+- Use "Open" only for internal tools or exploratory purposes
+- Review conversation logs to see if guardrails are working effectively
 
 ---
 
-<CardGroup cols={3}>
+## What's Next?
+
+<CardGroup cols={2}>
   <Card title="Sources" icon="database" href="/user-guides/agent/sources">
-    Manage your training data
+    Add training data to your agent
   </Card>
-  <Card title="Playground" icon="flask" href="/user-guides/agent/playground">
-    Test your agent
+  <Card title="Activity" icon="message" href="/user-guides/agent/activity">
+    View conversations and responses
   </Card>
-  <Card title="Activity" icon="chart-line" href="/user-guides/agent/activity">
-    View chat logs
+  <Card title="Analytics" icon="chart-line" href="/user-guides/agent/analytics">
+    Monitor agent performance
+  </Card>
+  <Card title="Test Agent" icon="flask" href="/user-guides/quick-start/your-first-agent#step-2-test--optimize-your-ai-agent">
+    Test your agent's responses
   </Card>
 </CardGroup>

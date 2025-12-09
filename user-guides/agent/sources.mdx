@@ -1,165 +1,249 @@
 ---
 title: 'Sources'
-description: 'Manage all the content that powers your AI agent'
+description: 'Manage all the training data that powers your AI Agent'
 ---
 
+The Sources section is where you manage all the training data for your AI Agent. Upload files, add text content, create Q&A pairs, and crawl websites to train your agent with relevant knowledge.
 
+## Training Overview
 
-The Sources tab in the SoftiusTech dashboard is where you manage all the content that powers your AI agent. It allows you to upload documents, add structured text snippets, crawl websites or sitemaps, create custom Q&As, and integrate with Notion.
+View your training data summary including:
+- **Total Sources** - Count of all training sources across all types
+- **Training Data** - Total storage used (displayed in KB/MB)
+- **Last Trained** - When your agent was last trained
+- **Breakdown by Type** - See how many sources you have for Files, Text Content, Q&A, and Websites
+
+The system automatically tracks the training state of each source and updates in real-time as processing completes.
 
 ## Files
 
-The Files tab within the Sources section allows you to upload and manage various document types to train your AI agent.
+Upload documents to train your AI Agent on existing content like manuals, FAQs, product information, and business documents.
 
 ### Supported File Types
 
-SoftiusTech supports the following formats:
-
-- .pdf (PDF Documents)
-- .txt (Plain Text Files)
-- .doc / .docx (Microsoft Word Documents)
+- **PDF** (.pdf) - PDF documents
+- **Text** (.txt) - Plain text files
+- **Word** (.doc, .docx) - Microsoft Word documents
+- **CSV** (.csv) - Comma-separated values
 
 ### Uploading Files
 
-1. Click the Upload Files button
-2. Select one or multiple documents from your device
-3. Files enter a queue and upload sequentially, with real-time status monitoring
+1. Navigate to the **Files** tab in Training
+2. Drag and drop files into the upload zone, or click to browse
+3. Files are processed automatically with real-time status updates
+4. Character count is tracked for each file
 
-### Preview and Metadata
+### Processing States
 
-After uploading:
-- Click any document to preview its contents within the dashboard
-- View timestamps showing when files were added and last updated
+Files go through several states during processing:
+- **Extracting** - Text is being extracted from the file
+- **Ready** - Content is ready for training
+- **Training** - Embeddings are being generated
+- **Trained** - Successfully indexed and ready to use
+- **Failed** - Processing error occurred
 
-### File Deletion
+### File Management
 
-- Delete individual files by clicking the three dots menu, then 'delete'
-- Delete all files at once by selecting the checkbox next to 'File sources', then clicking Delete
+- **Preview** - Click any file to view its extracted content
+- **Delete** - Remove files individually
+- **Restore** - Deleted files can be restored from trash
+- **Search** - Filter files by name
+- **Pagination** - View 50 files per page
 
-## Text Snippets
+## Text Content
 
-Add and manage text snippets, providing a flexible way to organize custom content for your AI agent's training.
+Add custom text snippets to train your agent with specific knowledge, FAQs, or formatted content.
 
-### Adding Text Snippets
+### Creating Text Content
 
-Create multiple text snippets with unique titles for easy identification. Each snippet supports rich text formatting:
+1. Navigate to the **Text Content** tab
+2. Click **Add New** to create a snippet
+3. Enter a **Title** for easy identification
+4. Use the rich text editor to format your content:
+   - Headings and subheadings
+   - Bold, italic, underline formatting
+   - Bulleted and numbered lists
+   - Links to external resources
+   - Code blocks and quotes
 
-- Add headings for clarity
-- Format with bold, italic, or strikethrough
-- Create ordered or bullet lists
-- Insert hyperlinks to external sources
-- Include emojis to enhance tone and readability
-- Expand the text input area for better visibility
+### Text Content Features
 
-### Preview and Metadata
+- **Rich HTML Editor** - Format content with full HTML support
+- **Character Count** - Tracks storage usage per snippet
+- **Edit Anytime** - Update existing content as needed
+- **Search & Filter** - Find snippets quickly
+- **Soft Delete** - Restore accidentally deleted content
 
-After creating a snippet:
-- Click to preview or edit content anytime
-- View precise timestamps for when snippets were added and last updated
+### Best Practices
 
-### Snippet Deletion
+- Use descriptive titles for easy organization
+- Break long content into separate snippets
+- Format content clearly with headings and lists
+- Include relevant keywords for better AI matching
 
-- Delete individually by clicking three dots, then 'delete'
-- Delete all snippets at once by selecting the checkbox next to 'Text sources'
+## Q&A Pairs
 
-## Website Crawling
+Create custom question-answer pairs to ensure your AI Agent provides precise responses to specific queries.
 
-The Website Crawling feature enables you to train your AI agent using content directly from websites.
+### Creating Q&A Pairs
 
-### Crawling Options
+1. Navigate to the **Q&A** tab
+2. Click **Add Q&A Pair**
+3. Enter the **Question** (supports HTML formatting)
+4. Enter the **Answer** (supports HTML formatting)
+5. Optionally assign a **Category** for organization
 
-Three ways to fetch content from the web:
+### Q&A Features
 
-1. **Crawl a full website** – Provide the homepage URL and let SoftiusTech discover all public pages
-2. **Submit a sitemap** – Point to an XML sitemap for a structured URL list
-3. **Add individual links** – Manually input specific URLs
+- **Rich Formatting** - Format both questions and answers with HTML
+- **Categories** - Organize Q&A pairs by topic
+- **Bulk Import** - Import multiple Q&A pairs from CSV
+- **Edit & Delete** - Modify existing pairs anytime
+- **Character Tracking** - Monitor storage usage
 
-For website crawling and sitemap submission, refine your crawl using:
+### Creating Q&A from Conversations
 
-- **Include Paths** – Only URLs matching these paths will be fetched
-- **Exclude Paths** – URLs matching these paths will be skipped
+You can create Q&A pairs directly from agent conversations:
+1. View a conversation in the Activity section
+2. Click **Revise Answer** on any AI response
+3. Edit the response if needed
+4. Check **Save as Q&A Pair** to add it to training data
 
-Specify multiple paths in both fields by pressing space after each one. Multiple websites or links crawl in parallel for efficiency.
+This feature helps you continuously improve your agent based on real interactions.
 
-### Grouping and Link Management
+### CSV Import Format
 
-Once crawling completes:
-- All links from a single domain group under the homepage URL
-- Click a homepage group to view all fetched links
-- Preview content by clicking individual links
+When bulk importing Q&A pairs, use this CSV format:
+```
+question,answer,category
+"What are your hours?","We're open Monday-Friday 9am-5pm","Business Hours"
+"Do you ship internationally?","Yes, we ship worldwide","Shipping"
+```
 
-### Editing and Excluding Links
+## Website Crawler
 
-After crawling:
-- Edit the URL of any fetched link
-- Exclude specific links from a group if you don't want them used in training
-- Edit include/exclude paths anytime, recrawl, and update your AI agent
+Automatically extract content from websites to train your AI Agent on web-based documentation, blogs, or product pages.
 
-### Link and Group Deletion
+### Crawling Methods
 
-- Delete individual links from a group by excluding it
-- Delete an entire group of links from a domain
-- Delete all groups by selecting the checkbox next to 'Link sources'
+#### Full Website Crawl
+1. Navigate to the **Website** tab
+2. Enter the homepage URL
+3. Configure crawl settings:
+   - **Max Depth** - How many levels deep to crawl (default: 2)
+   - **Include Paths** - Only crawl URLs matching these patterns
+   - **Exclude Paths** - Skip URLs matching these patterns
+4. Click **Start Crawl**
 
-## Custom Q&A Training
+#### Individual URLs
+Add specific pages without crawling an entire site:
+1. Enter the URL of the page
+2. Click **Add Single URL**
+3. The page is fetched and processed immediately
 
-The Q&A Sources feature lets you train your AI agent with custom question-and-answer pairs for precise responses to frequently asked or business-specific queries.
+### Crawl Settings
 
-### Creating Q&As
+**Include Paths** (optional)
+- Specify path patterns to crawl only specific sections
+- Example: `/docs/`, `/blog/`, `/products/`
+- Multiple patterns can be added
 
-- Each Q&A entry begins with a title for quick location and organization
-- Associate multiple question variations with a single answer to improve recognition and accuracy
+**Exclude Paths** (optional)
+- Skip unwanted sections like login pages or admin areas
+- Example: `/login`, `/admin`, `/cart`
+- Multiple patterns can be added
 
-### Editing Answers
+**Max Depth**
+- Controls how many link levels to follow from the starting URL
+- Depth 1: Only the starting page
+- Depth 2: Starting page + direct links
+- Depth 3: Two levels of linked pages
 
-Answers are fully customizable with rich text formatting tools:
+### Website Source Management
 
-- Add headings for clarity
-- Format with bold, italic, or strikethrough
-- Create ordered or bullet lists
-- Insert hyperlinks to external sources
-- Include emojis to enhance tone and readability
+**Hierarchical View**
+- Website sources are displayed in a tree structure
+- Parent URLs show child pages discovered during crawling
+- Click a parent to expand and view all child pages
 
-### Usage Insights
+**Actions**
+- **Recrawl** - Refresh content from the original URL
+- **Cancel** - Stop an in-progress crawl
+- **Delete** - Remove individual URLs or entire website sources
+- **Bulk Delete** - Select multiple sources to delete at once
 
-Click any Q&A to open its detail view for real-time usage metrics:
+### Crawl Progress
 
-- Number of times the question has been asked by users (updated instantly)
-- Last time the question was asked
-- Date the Q&A was added
-- Visual chart showing question frequency over time
+Real-time updates show:
+- **Crawled** - Pages successfully processed
+- **Queued** - Pages waiting to be crawled
+- **Total** - Total pages discovered
 
-These insights help identify which topics matter most to your users and prioritize updates accordingly.
+Progress is updated live via WebSocket connection.
 
-### Management & Deletion
+### Link Limits
 
-- Delete any Q&A individually
-- Delete all at once by checking the box next to "Q&A sources" and clicking delete
+Your subscription plan includes a link limit. The system tracks:
+- Links used across all agents
+- Links available in your plan
+- Upgrade prompts when approaching limits
 
-## Notion
+## Training States
 
-This integration enables your AI agent to access and utilize information stored in your Notion databases.
+All training sources go through these states:
 
-## General Notes
+| State | Description |
+|-------|-------------|
+| **Extracting** | Processing file or fetching content |
+| **Discovering** | Website crawler finding URLs |
+| **Ready** | Content ready for training |
+| **Training** | Generating embeddings for AI |
+| **Trained** | Successfully indexed |
+| **Edited** | Content modified, needs retraining |
+| **Failed** | Processing error |
+| **Removed** | Soft deleted (can be restored) |
+
+## Storage & Limits
+
+- **Character Tracking** - Each source displays character count
+- **Total Storage** - View total KB/MB used across all sources
+- **Plan Limits** - Different plans have different storage limits
+- **Warnings** - System alerts when approaching limits
+
+## Retraining Your Agent
+
+After adding, editing, or deleting sources:
+1. Click **Train Agent** button
+2. The system generates embeddings for all new/modified content
+3. Real-time progress updates show training status
+4. Training typically completes in 2-5 minutes
+
+<Note>
+Your agent automatically uses all **Trained** sources when responding to queries. There's no need to manually enable individual sources.
+</Note>
 
 <Warning>
-- Each AI agent cannot be trained on more than 33 MB
-- When uploading files, ensure they contain selectable text
-- All data should be in plain text; markdown language is preferred
-- When integrating with a paid Notion plan, ensure you have admin access for all necessary permissions
+- Ensure uploaded files contain selectable text (not scanned images)
+- Website crawling respects robots.txt and may be blocked by some sites
+- Large files or websites may take several minutes to process
+- Character limits vary by subscription plan
 </Warning>
-
-<Info>
-Click the "Retrain agent" button after adding, deleting, or updating your sources
-</Info>
 
 ---
 
+## What's Next?
+
 <CardGroup cols={2}>
-  <Card title="Playground" icon="flask" href="/user-guides/agent/playground">
+  <Card title="Test Agent" icon="flask" href="/user-guides/quick-start/your-first-agent#step-2-test--optimize-your-ai-agent">
     Test your agent with the new training data
   </Card>
   <Card title="Settings" icon="gear" href="/user-guides/agent/settings">
     Configure your agent's behavior
+  </Card>
+  <Card title="Activity" icon="message" href="/user-guides/agent/activity">
+    View conversations and responses
+  </Card>
+  <Card title="Analytics" icon="chart-line" href="/user-guides/agent/analytics">
+    Monitor performance metrics
   </Card>
 </CardGroup>

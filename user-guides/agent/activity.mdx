@@ -1,50 +1,218 @@
 ---
 title: 'Activity'
-description: 'View and manage chat logs and leads'
+description: 'View and manage customer conversations with your AI Agent'
 ---
 
+The Activity section displays all conversations between customers and your AI Agent. Monitor interactions in real-time, send manual messages, revise AI responses, and manage conversation statuses.
 
+## Conversations Overview
 
-This section shows the chat logs of the conversations your users had with your AI agent and the Lead forms filled by your users.
+### Conversation List
 
-## Chat Logs
+Each conversation shows:
+- **Customer Information** - Email address and name (when provided)
+- **Status Badge** - Current conversation state
+- **Message Count** - Total messages in the conversation
+- **Last Message Time** - Most recent activity timestamp
+- **Mode Indicator** - Whether conversation is in AI or Manual mode
 
-The chat logs provides a detailed view of all user interactions with your AI agent. It allows you to review individual conversations and evaluate your agent's responses. Each log includes user messages, agent responses, and any triggered actions, helping you identify issues, optimize responses, and improve overall user experience.
+### Conversation Status
 
-The chat logs can be filtered by the following:
+| Status | Description |
+|--------|-------------|
+| **AI Handling** | AI is actively responding to customer queries |
+| **Pending Human** | Customer requested human agent or AI escalated |
+| **Human Assigned** | Human agent has taken over the conversation |
+| **Resolved** | Conversation has been closed |
 
-- Date
-- Confidence Score
-- Source
-- Feedback
-- Sentiment
-- Topic
+## Viewing Conversations
 
-### Improve Answer
+### Message Display
 
-This feature allows you adjust the AI Agent's response if it wasn't accurate or satisfactory. When you click the Improve Answer button, a form appears showing the user's original question, the AI Agent's response, and a field where you can enter the expected answer. Once the answer is updated, the question and answer are added automatically to the Q&A section of your sources.
+Click any conversation to view the full message history:
+- **Customer Messages** - Questions and inputs from the customer
+- **AI Responses** - Automatic replies from your agent
+- **Human Messages** - Manual responses from team members
+- **Timestamps** - When each message was sent
+- **Delivery Status** - Message delivered and read indicators
 
-### Confidence Score
+### Message Details
 
-This indicates how confident the AI Agent is in its response based on the sources you've trained it on. You can review responses with low confidence scores and revise them to improve their accuracy.
+For AI responses, you can view:
+- **AI Model Used** - Which AI model generated the response
+- **Tokens Used** - Number of tokens consumed
+- **Tool Calls** - If AI used any tools or functions
+- **Attachments** - Files shared in the conversation
 
-### Exporting Conversations
+## Sending Manual Messages
 
-You can export the conversations in the chats log directly from the dashboard using the Export button. The export can be downloaded as JSON, PDF, and CSV.
+Take over any conversation and respond manually:
 
-## Leads
+1. **Open a Conversation** - Click to view message history
+2. **Type Your Response** - Use the message input at the bottom
+3. **Attach Files** (Optional) - Upload files to send with your message
+4. **Send** - Click send or press Enter
 
-This section shows the submissions of the Leads form along with their submission date. You can filter them by date and export them as CSV or PDF.
+### File Attachments
 
-The leads form can be configured through the settings page of the AI agent or through the Collect Leads action.
+- Upload files alongside your messages
+- Supported formats vary by file type
+- Files are accessible to customers in the conversation
+
+<Note>
+Manual messages are sent immediately and appear in real-time for the customer.
+</Note>
+
+## Revising AI Responses
+
+Improve AI answers and save them as training data:
+
+### How to Revise
+
+1. **Find the Message** - Locate the AI response to revise
+2. **Click Revise Answer** - Opens the revision modal
+3. **Edit the Response** - Modify the AI's answer
+4. **Save as Q&A** (Optional) - Check the box to add to training data
+5. **Submit** - Save your changes
+
+### Saving as Q&A Pair
+
+When you check "Save as Q&A Pair":
+- The original question becomes the Q&A question
+- Your revised answer becomes the Q&A answer
+- The pair is automatically added to your Sources
+- Future similar questions will use your improved response
+
+This creates a feedback loop where you continuously improve your agent based on real interactions.
+
+## Conversation Modes
+
+### AI Mode
+- Agent automatically responds using training data
+- No human intervention required
+- Best for routine questions and high volumes
+
+### Manual Mode
+- All messages wait for human response
+- AI does not reply automatically
+- Best for sensitive or complex cases
+
+### Toggling Mode
+
+Switch any conversation between modes:
+1. Open the conversation
+2. Click the mode toggle button
+3. Select AI or Manual mode
+4. Mode changes apply immediately
+
+<Warning>
+Switching to Manual mode stops AI responses. The customer will wait for a human reply.
+</Warning>
+
+## Real-Time Features
+
+### Live Updates
+
+Conversations update in real-time using WebSocket connections:
+- **New Message Notifications** - Sound alert when messages arrive
+- **Typing Indicators** - See when customer or AI is typing
+- **Delivery Confirmations** - Know when messages are delivered and read
+- **Unread Badge** - Track unread conversations
+
+### Sound Notifications
+
+Enable browser notifications to hear when:
+- New conversations start
+- Customers send messages
+- Human attention is required
+
+## Customer Information
+
+### View Customer Details
+
+Side panel shows:
+- Email address
+- Name (if provided)
+- Conversation history
+- Total messages
+
+### Edit Customer Email
+
+Update customer email if needed:
+1. Click on customer info
+2. Edit the email field
+3. Changes save automatically
+
+## Conversation Management
+
+### Mark as Read
+
+- Conversations marked as read when you open them
+- Unread badge clears automatically
+- Helps track which conversations need attention
+
+### Update Status
+
+Change conversation status:
+1. Open the conversation
+2. Select new status from dropdown
+3. Options: AI Handling, Pending Human, Human Assigned, Resolved
+
+### Resolve Conversations
+
+Mark conversations as resolved when complete:
+- Removes from active conversation list
+- Can still access in resolved view
+- Helps organize workflow
+
+## Message Pagination
+
+- **50 Messages Per Page** - Loads in chunks for performance
+- **Load More** - Scroll to top to load older messages
+- **Total Count** - Shows total messages in conversation
+
+## Best Practices
+
+**Monitoring Conversations**
+- Check Activity regularly to catch AI errors early
+- Review AI responses for accuracy and tone
+- Use revised answers to improve training data
+
+**Manual Responses**
+- Respond promptly when customers request human help
+- Be clear and professional in manual messages
+- Switch back to AI mode when appropriate
+
+**Revising Answers**
+- Always save good revised answers as Q&A pairs
+- This improves future AI responses automatically
+- Build your knowledge base from real interactions
+
+**Status Management**
+- Keep statuses updated for team coordination
+- Resolve conversations when complete
+- Use Manual mode for sensitive topics
+
+## Keyboard Shortcuts
+
+- **Enter** - Send message
+- **Shift + Enter** - New line in message
 
 ---
+
+## What's Next?
 
 <CardGroup cols={2}>
-  <Card title="Analytics" icon="chart-mixed" href="/user-guides/agent/analytics">
-    View performance analytics
-  </Card>
   <Card title="Sources" icon="database" href="/user-guides/agent/sources">
-    Update training data based on feedback
+    Add Q&A pairs from revised answers
+  </Card>
+  <Card title="Analytics" icon="chart-line" href="/user-guides/agent/analytics">
+    View conversation metrics and performance
+  </Card>
+  <Card title="Settings" icon="gear" href="/user-guides/agent/settings">
+    Configure AI mode and behavior
+  </Card>
+  <Card title="Test Agent" icon="flask" href="/user-guides/quick-start/your-first-agent#step-2-test--optimize-your-ai-agent">
+    Test your agent before deployment
   </Card>
 </CardGroup>

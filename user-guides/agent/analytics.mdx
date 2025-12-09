@@ -1,67 +1,208 @@
 ---
 title: 'Analytics'
-description: 'Track conversations and monitor agent performance'
+description: 'Track performance metrics and monitor your AI Agent activity'
 ---
 
+The Analytics section provides insights into your AI Agent's performance, conversation volumes, response times, and customer satisfaction. Use these metrics to optimize your agent and improve customer experience.
 
+## Overview Dashboard
 
-## Chats
+### Summary Cards
 
-The Analytics tab displays AI Agent activity during conversations, including three sections: Chats, Topics, and Sentiment. By default, it shows activity for all AI Agents in your workspace for the last week.
+Four key metrics are displayed at the top of the Analytics page:
 
-This section provides:
+**Total Messages**
+- Total number of messages sent and received in the selected time period
+- Includes both customer messages and AI responses
+- Shows aggregate activity across all conversations
 
-- Total number of chats
-- Total number of messages
-- Messages with positive feedback (thumbs up)
-- Messages with negative feedback (thumbs down)
-- Geographic distribution graph showing chats per country (detected from user IP addresses)
+**Total Conversations**
+- Number of unique conversations started in the time period
+- Each conversation represents a customer interaction session
+- Tracks how many customers engaged with your agent
 
-You can filter data by date using pre-defined options:
-- Last 7 days
-- Last 30 days
-- Last 3 months
-- Last year
+**Average Response Time**
+- Mean time taken by your AI Agent to respond to customer queries
+- Measured in seconds or milliseconds
+- Lower response times indicate better performance
 
-## Topics
+**Customer Satisfaction**
+- Aggregate satisfaction score based on customer feedback
+- May include ratings, thumbs up/down, or other feedback mechanisms
+- Helps identify areas for improvement
 
-This section displays topics mentioned by users in conversations. The AI Agent detects topics automatically, but you can also manage them manually.
+## Time Range Filter
 
-**Available actions:**
-- Search topics
-- Add topic
-- Edit topic
-- Delete topic
-- Freeze topics (stops automatic topic detection)
+Select different time periods to view analytics:
 
-Access manual topic management through the "View All" button on the right side of the page.
+| Time Range | Description |
+|------------|-------------|
+| **Last 7 Days** | Recent activity and trends |
+| **Last 30 Days** | Monthly performance overview |
+| **Last 90 Days** | Quarterly insights and patterns |
 
-## Sentiment
+When you change the time range:
+- All metrics update automatically
+- Charts redraw with new data
+- Summary cards recalculate
 
-This section shows how the AI Agent detects user sentiment and emotions during conversations. Sentiment analysis occurs automatically.
+## Message Volume Over Time
 
-## Notes
+### Line Chart Visualization
 
-Important information about analytics data:
+This chart displays message activity trends:
+- **X-axis**: Dates within selected time period
+- **Y-axis**: Message count
+- **Trend Line**: Shows message volume over time
 
-<Info>
-- Data updates with a 1-day delay, reflecting previous day information
-- Data recording begins after subscribing to a plan
-- Topics and sentiment data only appear after plan upgrade; pre-upgrade data is excluded
-- Activity Tab shows per-chat data for individual users
-- Analytics Tab aggregates information including topics, sentiment, and feedback
-- Display options: pie chart or graph format
-- Message count includes all conversation messages
-- Credits calculate only for AI-generated responses, excluding initial messages
-</Info>
+### What to Look For
+
+**Increasing Trend**
+- Growing user engagement
+- Successful deployment
+- Expanding user base
+
+**Decreasing Trend**
+- Reduced engagement (investigate causes)
+- Seasonal patterns
+- Technical issues
+
+**Spikes**
+- Marketing campaigns
+- Product launches
+- Support incidents
+
+**Valleys**
+- Weekends or holidays
+- Downtime
+- Seasonal lulls
+
+## Daily Activity Distribution
+
+### Bar Chart Visualization
+
+Shows conversation distribution by day of the week:
+- **X-axis**: Days (Monday - Sunday)
+- **Y-axis**: Activity count
+- **Bars**: Height represents volume
+
+### Insights
+
+Use this chart to:
+- Identify peak activity days
+- Plan support staffing
+- Schedule agent maintenance during low-traffic periods
+- Understand user behavior patterns
+
+**Example Patterns:**
+- B2B agents often see weekday peaks
+- Consumer agents may be busier on weekends
+- Support queries spike on Mondays
+
+## Using Analytics Data
+
+### Performance Monitoring
+
+**Response Time**
+- Target: Under 2 seconds for most queries
+- If slow: Check training data size, API latency, or server resources
+- Optimize by reducing complex embeddings or using faster models
+
+**Conversation Volume**
+- Track growth over time
+- Compare to website traffic or marketing campaigns
+- Identify successful content or features
+
+**Message Volume**
+- High messages per conversation = engaged users or complex queries
+- Low messages per conversation = quick resolutions or user drop-off
+- Balance depends on your use case
+
+### Optimization Strategies
+
+**Improving Satisfaction**
+1. Review negative feedback in Activity section
+2. Revise AI responses that received poor ratings
+3. Save improved answers as Q&A pairs
+4. Monitor satisfaction score improvement
+
+**Reducing Response Time**
+1. Optimize training data (remove duplicate or irrelevant content)
+2. Use more efficient AI models
+3. Implement caching for common queries
+4. Review server performance
+
+**Increasing Engagement**
+1. Improve agent visibility on your website
+2. Use suggested messages to prompt user interaction
+3. Deploy agent on high-traffic pages
+4. Optimize initial messages for clarity
+
+## Comparing Site Connections
+
+If you have multiple site connections:
+- Filter analytics by specific site
+- Compare performance across sites
+- Identify which sites have the most active conversations
+
+## Data Refresh
+
+- Analytics data updates in real-time for recent activity
+- Historical data is aggregated for performance
+- Time range changes fetch new data immediately
+
+<Note>
+Analytics tracks all conversations, including both AI and manual modes. Use this data to understand total customer support volume.
+</Note>
+
+## Best Practices
+
+**Daily Monitoring**
+- Check Total Messages and Conversations daily
+- Look for anomalies or unexpected drops
+- Respond quickly to performance issues
+
+**Weekly Reviews**
+- Review average response time trends
+- Identify days with highest activity
+- Plan capacity accordingly
+
+**Monthly Analysis**
+- Compare satisfaction scores month-over-month
+- Analyze message volume growth
+- Identify long-term trends
+
+**Using Data for Training**
+- High message volume with low satisfaction = training gaps
+- Conversations with many back-and-forth messages = unclear responses
+- Review Activity logs for specific examples to improve
+
+## Exporting Data
+
+While the dashboard provides visual insights, you can:
+- Take screenshots of charts for reports
+- Access detailed conversation logs in Activity section
+- Use data to justify support investments or agent improvements
+
+<Warning>
+Analytics data is specific to each agent. If you have multiple agents, view analytics separately for each to understand individual performance.
+</Warning>
 
 ---
+
+## What's Next?
 
 <CardGroup cols={2}>
-  <Card title="Activity" icon="list" href="/user-guides/agent/activity">
-    View detailed chat logs
+  <Card title="Activity" icon="message" href="/user-guides/agent/activity">
+    View detailed conversation logs
+  </Card>
+  <Card title="Sources" icon="database" href="/user-guides/agent/sources">
+    Improve training data based on insights
   </Card>
   <Card title="Settings" icon="gear" href="/user-guides/agent/settings">
-    Configure your agent
+    Adjust agent configuration
+  </Card>
+  <Card title="Your First Agent" icon="rocket" href="/user-guides/quick-start/your-first-agent">
+    Learn more about optimizing your agent
   </Card>
 </CardGroup>
