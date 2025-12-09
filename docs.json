@@ -30,14 +30,6 @@
               "user-guides/agent/activity",
               "user-guides/agent/analytics"
             ]
-          },
-          {
-            "group": "Actions",
-            "pages": [
-              "user-guides/agent/actions/actions-overview",
-              "user-guides/agent/actions/custom-action",
-              "user-guides/agent/actions/collect-leads"
-            ]
           }
         ]
       },
