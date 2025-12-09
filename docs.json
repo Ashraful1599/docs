@@ -24,7 +24,6 @@
           {
             "group": "AI Agent Management",
             "pages": [
-              "user-guides/agent/playground",
               "user-guides/agent/sources",
               "user-guides/agent/settings",
               "user-guides/agent/activity",
