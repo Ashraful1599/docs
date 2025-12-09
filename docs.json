@@ -103,5 +103,11 @@
       "github": "https://github.com/softiustech",
       "linkedin": "https://linkedin.com/company/softiustech"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/user-guides/quick-start/your-first-agent"
+    }
+  ]
 }
