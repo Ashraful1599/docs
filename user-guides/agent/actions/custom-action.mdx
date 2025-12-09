@@ -1,0 +1,82 @@
+---
+title: 'Custom Action'
+description: 'Create custom API integrations for your AI agent'
+---
+
+
+
+## Create Custom Action
+
+This action enables you to instruct your AI agent to deliver any information included in an API response.
+
+## General
+
+- **Action Name**: A descriptive identifier helping the AI agent recognize when to use it
+- **When to use**: Detailed instructions on usage scenarios, including examples of provided data and relevant customer queries
+- Click "Save and Continue" after configuration
+
+## API
+
+- **Collect data inputs from user**: Add required information for the AI agent
+  - Name: Input identifier
+  - Type: Data type specification
+  - Description: Brief explanation for the AI agent
+
+- **API request**: The endpoint called to retrieve or send data
+  - Method: HTTP method selection
+  - HTTPS URL: API endpoint location
+  - Add variable: Include user input variables
+
+- **Parameters**: Key-value pairs in the request URL
+- **Headers**: Request metadata
+- **Body**: Request data (typically JSON format)
+
+Click "Save and Continue" after completion.
+
+## Test Response
+
+- **Live response**: Test with actual API data to verify configuration
+- **Example response**: Use sample JSON if API isn't ready
+- Click "Save and Continue"
+
+## Data Access
+
+- **Full data access**: Allow complete API response information for comprehensive replies
+- **Limited data access**: Restrict information access for controlled responses and data protection
+- Click "Save and Continue"
+
+<Warning>
+**Note:** Maximum response size is 20KB. Exceeding this limit returns an error.
+</Warning>
+
+## Use Cases
+
+### Upgrade Subscription
+
+Configure your agent to handle subscription upgrades by setting:
+- Action name: Update_Subscription
+- Trigger condition: User requests premium plan upgrade
+- API endpoint: `https://api.softiustech.com/api/update-subscription`
+- Method: GET
+- Data access: Full
+
+### Weather API
+
+Enable weather information retrieval by:
+- Action name: Get_Weather
+- Trigger: User asks about weather conditions
+- API endpoint: `https://wttr.in/{{city}}?format=j1`
+- Method: GET
+- Input: City name (text)
+- Data access: Full
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Actions Overview" icon="list" href="/user-guides/agent/actions/actions-overview">
+    View all available actions
+  </Card>
+  <Card title="Playground" icon="flask" href="/user-guides/agent/playground">
+    Test your custom action
+  </Card>
+</CardGroup>

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "SoftiusTech Documentation",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "User Guides",
+        "groups": [
+          {
+            "group": "Quick Start",
+            "pages": [
+              "user-guides/quick-start/introduction",
+              "user-guides/quick-start/your-first-agent",
+              "user-guides/quick-start/best-practices"
+            ]
+          },
+          {
+            "group": "AI Agent Management",
+            "pages": [
+              "user-guides/agent/playground",
+              "user-guides/agent/sources",
+              "user-guides/agent/settings",
+              "user-guides/agent/activity",
+              "user-guides/agent/analytics"
+            ]
+          },
+          {
+            "group": "Actions",
+            "pages": [
+              "user-guides/agent/actions/actions-overview",
+              "user-guides/agent/actions/custom-action",
+              "user-guides/agent/actions/collect-leads"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Help & Support",
+        "groups": [
+          {
+            "group": "Support",
+            "pages": [
+              "help/faq"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "href": "https://softiustech.com/docs",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Dashboard",
+          "href": "https://softiustech.com/dashboard",
+          "icon": "gauge"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light-large.svg",
+    "dark": "/logo/dark-large.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@softiustech.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://softiustech.com/dashboard"
+    }
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/softiustech",
+      "github": "https://github.com/softiustech",
+      "linkedin": "https://linkedin.com/company/softiustech"
+    }
+  }
+}

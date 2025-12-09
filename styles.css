@@ -1,0 +1,11 @@
+/* Make the topbar logo larger */
+.nav-logo {
+  height: 3.5rem !important; /* h-14 equivalent - 56px */
+  max-height: 3.5rem !important;
+}
+
+/* Alternative: Use specific height in pixels */
+/* .nav-logo {
+  height: 60px !important;
+  max-height: 60px !important;
+} */

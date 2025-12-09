@@ -1,0 +1,105 @@
+---
+title: 'Settings'
+description: 'Configure your AI agent behavior and appearance'
+---
+
+
+
+## General
+
+This tab displays the AI agent ID, character count, agent name, credit limit, and options to delete the agent or conversations.
+
+The Credit Limit feature allows you to cap the maximum credits this agent can consume from your workspace allocation.
+
+<Warning>
+**DANGER ZONE**: Actions in this section are irreversible. Deleting an agent or its conversations cannot be undone.
+</Warning>
+
+## AI
+
+This section controls the agent's behavior and response patterns, including the language model, system instructions, temperature settings, and training history.
+
+### Instructions
+
+Define how your AI agent should behave when answering user questions. This section enables customization through either custom prompts or pre-defined templates to match your brand voice and interaction style.
+
+**Key Guidelines:**
+- **Personality Definition**: Specify whether the agent should be formal, casual, or adopt a particular emotional tone
+- **Question Handling**: Determine response length and depth based on query type (factual vs. opinion-based)
+- **Missing Information**: Clarify what the agent should do when it lacks an answer
+- **URL Usage**: Define when and how to include links in responses
+- **Topic Focus**: Specialize the agent in specific domains through targeted instructions
+
+**Recommendations:**
+
+**Do's:**
+- "Be clear and concise" when specifying behavior, tone, and style
+- Include specific response examples
+- Use plain language to ensure accurate interpretation
+- Test and refine prompts iteratively
+
+**Don'ts:**
+- Avoid vague or overly general instructions
+- Don't use contradictory guidance
+- Don't overload prompts with excessive details
+
+Reference [OpenAI's guide](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) and [Anthropic's guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) for detailed best practices.
+
+### Model
+
+Select from the latest OpenAI, Claude, Cohere, and Gemini models. Full model list available in the [Playground](/user-guides/agent/playground) documentation.
+
+### Temperature
+
+Temperature controls creativity in responses. A setting of 0.2 is recommended to maintain conservative answers grounded in your training sources.
+
+## Chat Interface
+
+Customize where the chat bubble appears, welcome messages, and chat icons.
+
+**Initial Message**: Displayed before and after the user opens the chat bubble. Supports customization per user.
+
+**Suggested Messages**: Quick-reply options reflecting your most frequently asked questions.
+
+### Content
+
+- **Text Placeholder**: Input field prompt text
+- **Collect Feedback**: Enable thumbs up/down rating buttons
+- **Regenerate Messages**: Display response regeneration button
+- **Footer**: Text shown at chat bottom (disclaimers, privacy links)
+- **Theme**: Light or Dark mode
+
+### Style
+
+- **Display Name**: Agent name shown to users
+- **Profile Picture**: Agent avatar
+- **Chat Icon**: Website widget icon
+- **User Message Color**: Customizable message styling
+- **Bubble Alignment**: Left or Right positioning
+- **Initial Messages Pop-up**: Auto-show timing (negative value disables)
+
+## Security
+
+Set domain restrictions for iframe embedding and configure rate limiting to restrict messages per device over specified time periods. Customize the rate-limit message displayed to users.
+
+## Notifications
+
+Configure email notifications: receive daily digests of submitted leads or conversation summaries. Support for multiple email addresses.
+
+## Webhooks
+
+Configure webhooks triggered by specific actions. Currently supports "lead submitted" events, which send POST requests containing conversation ID and form data (name, email, phone) to your specified API endpoint for third-party automation.
+
+---
+
+<CardGroup cols={3}>
+  <Card title="Sources" icon="database" href="/user-guides/agent/sources">
+    Manage your training data
+  </Card>
+  <Card title="Playground" icon="flask" href="/user-guides/agent/playground">
+    Test your agent
+  </Card>
+  <Card title="Activity" icon="chart-line" href="/user-guides/agent/activity">
+    View chat logs
+  </Card>
+</CardGroup>

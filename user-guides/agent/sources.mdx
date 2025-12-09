@@ -1,0 +1,165 @@
+---
+title: 'Sources'
+description: 'Manage all the content that powers your AI agent'
+---
+
+
+
+The Sources tab in the SoftiusTech dashboard is where you manage all the content that powers your AI agent. It allows you to upload documents, add structured text snippets, crawl websites or sitemaps, create custom Q&As, and integrate with Notion.
+
+## Files
+
+The Files tab within the Sources section allows you to upload and manage various document types to train your AI agent.
+
+### Supported File Types
+
+SoftiusTech supports the following formats:
+
+- .pdf (PDF Documents)
+- .txt (Plain Text Files)
+- .doc / .docx (Microsoft Word Documents)
+
+### Uploading Files
+
+1. Click the Upload Files button
+2. Select one or multiple documents from your device
+3. Files enter a queue and upload sequentially, with real-time status monitoring
+
+### Preview and Metadata
+
+After uploading:
+- Click any document to preview its contents within the dashboard
+- View timestamps showing when files were added and last updated
+
+### File Deletion
+
+- Delete individual files by clicking the three dots menu, then 'delete'
+- Delete all files at once by selecting the checkbox next to 'File sources', then clicking Delete
+
+## Text Snippets
+
+Add and manage text snippets, providing a flexible way to organize custom content for your AI agent's training.
+
+### Adding Text Snippets
+
+Create multiple text snippets with unique titles for easy identification. Each snippet supports rich text formatting:
+
+- Add headings for clarity
+- Format with bold, italic, or strikethrough
+- Create ordered or bullet lists
+- Insert hyperlinks to external sources
+- Include emojis to enhance tone and readability
+- Expand the text input area for better visibility
+
+### Preview and Metadata
+
+After creating a snippet:
+- Click to preview or edit content anytime
+- View precise timestamps for when snippets were added and last updated
+
+### Snippet Deletion
+
+- Delete individually by clicking three dots, then 'delete'
+- Delete all snippets at once by selecting the checkbox next to 'Text sources'
+
+## Website Crawling
+
+The Website Crawling feature enables you to train your AI agent using content directly from websites.
+
+### Crawling Options
+
+Three ways to fetch content from the web:
+
+1. **Crawl a full website** – Provide the homepage URL and let SoftiusTech discover all public pages
+2. **Submit a sitemap** – Point to an XML sitemap for a structured URL list
+3. **Add individual links** – Manually input specific URLs
+
+For website crawling and sitemap submission, refine your crawl using:
+
+- **Include Paths** – Only URLs matching these paths will be fetched
+- **Exclude Paths** – URLs matching these paths will be skipped
+
+Specify multiple paths in both fields by pressing space after each one. Multiple websites or links crawl in parallel for efficiency.
+
+### Grouping and Link Management
+
+Once crawling completes:
+- All links from a single domain group under the homepage URL
+- Click a homepage group to view all fetched links
+- Preview content by clicking individual links
+
+### Editing and Excluding Links
+
+After crawling:
+- Edit the URL of any fetched link
+- Exclude specific links from a group if you don't want them used in training
+- Edit include/exclude paths anytime, recrawl, and update your AI agent
+
+### Link and Group Deletion
+
+- Delete individual links from a group by excluding it
+- Delete an entire group of links from a domain
+- Delete all groups by selecting the checkbox next to 'Link sources'
+
+## Custom Q&A Training
+
+The Q&A Sources feature lets you train your AI agent with custom question-and-answer pairs for precise responses to frequently asked or business-specific queries.
+
+### Creating Q&As
+
+- Each Q&A entry begins with a title for quick location and organization
+- Associate multiple question variations with a single answer to improve recognition and accuracy
+
+### Editing Answers
+
+Answers are fully customizable with rich text formatting tools:
+
+- Add headings for clarity
+- Format with bold, italic, or strikethrough
+- Create ordered or bullet lists
+- Insert hyperlinks to external sources
+- Include emojis to enhance tone and readability
+
+### Usage Insights
+
+Click any Q&A to open its detail view for real-time usage metrics:
+
+- Number of times the question has been asked by users (updated instantly)
+- Last time the question was asked
+- Date the Q&A was added
+- Visual chart showing question frequency over time
+
+These insights help identify which topics matter most to your users and prioritize updates accordingly.
+
+### Management & Deletion
+
+- Delete any Q&A individually
+- Delete all at once by checking the box next to "Q&A sources" and clicking delete
+
+## Notion
+
+This integration enables your AI agent to access and utilize information stored in your Notion databases.
+
+## General Notes
+
+<Warning>
+- Each AI agent cannot be trained on more than 33 MB
+- When uploading files, ensure they contain selectable text
+- All data should be in plain text; markdown language is preferred
+- When integrating with a paid Notion plan, ensure you have admin access for all necessary permissions
+</Warning>
+
+<Info>
+Click the "Retrain agent" button after adding, deleting, or updating your sources
+</Info>
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Playground" icon="flask" href="/user-guides/agent/playground">
+    Test your agent with the new training data
+  </Card>
+  <Card title="Settings" icon="gear" href="/user-guides/agent/settings">
+    Configure your agent's behavior
+  </Card>
+</CardGroup>

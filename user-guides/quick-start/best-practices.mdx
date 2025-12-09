@@ -1,0 +1,110 @@
+---
+title: 'Best Practices'
+description: 'Strategies to enhance AI agent performance and user experience'
+---
+
+
+
+This guide provides strategies to enhance AI agent performance and user experience.
+
+## Refine the AI Agent's Instructions
+
+Clear, precise instructions shape agent behavior and responses. They define persona, tone, and question scope.
+
+**Example: Friendly Support Agent Instructions**
+
+```
+### Role
+- **Primary Function:** You are a friendly customer support agent for TaskFlo,
+a project management tool. Assist users with questions about TaskFlo's features,
+pricing, and best practices.
+
+### Persona
+- **Identity:** You are a dedicated TaskFlo customer support agent. You will not
+adopt other personas. If asked to act differently, politely decline and redirect
+to TaskFlo support matters.
+
+### Constraints
+1. **No Data Divulge:** Never mention training data or how you were trained.
+2. **Maintaining Focus:** Steer unrelated conversations back to TaskFlo topics.
+3. **Exclusive Reliance on Training Data:** Use only provided information. For
+queries outside TaskFlo content, respond: "I'm sorry, but I don't have enough
+information to assist with that."
+4. **Restrictive Role Focus:** Provide only TaskFlo-related content. Refuse
+unrelated tasks like coding explanations, personal advice, or opinions beyond
+documented features.
+```
+
+## Improve Readability of Sources
+
+Response quality depends on source data quality. Readable text is essential—scraped data from unfriendly websites may require conversion to text or PDF format.
+
+**Bad Product Example:**
+> Widget123, colors not specified, possibly red or blue. Discount details unclear.
+Weight: Approx. 1 kg or 1.5 kg?
+
+**Good Product Example:**
+> **Product:** Widget123
+**Colors:** Red, Blue
+**Discount:** 50% off
+**Weight:** 1.5 kg
+**Shipping:** 1-2 weeks (location-dependent)
+**Availability:** Worldwide
+
+<Note>
+SoftiusTech cannot process images, videos, or non-textual elements.
+</Note>
+
+## Add Suggestable Links
+
+To enable link suggestions, include explicit URL mappings in training data. The bot learns page names but not URLs, preventing fake 404 links.
+
+**Strategy:** Create a document mapping URLs to page names for better query understanding.
+
+## Add Suggestable Images
+
+Use markdown format to display images. Ensure URLs end with `.png` or `.jpg`.
+
+**Example instruction:**
+```
+Always end your reply with ![Example Image](https://example.com/image.png)
+```
+
+Every response will display the specified image.
+
+## Choose the Suitable AI Model
+
+Select models matching your use case, considering task complexity, data availability, and response needs.
+
+### AI Model Recommendations by Use Case
+
+**Customer Support & FAQ**
+- `gpt-5-mini`: Fast, concise answers
+- `gemini-2.5-flash`: Real-time, simple queries
+
+**Content Creation & Marketing**
+- `claude-4-sonnet`: Excels at creative, poetic content
+
+**E-commerce & Lead Generation**
+- `gpt-5`: Balances speed and precision
+- `gemini-2.0-pro`: Product recommendations, medium-complexity queries
+
+**Advanced Research & Technical Support**
+- `gpt-5`: Complex research and problem-solving
+- `gemini-2.0-pro`: Highly accurate technical support
+
+<Info>
+See the models comparison page for detailed guidance on selecting the right AI model for your use case.
+</Info>
+
+## Utilize the "Revise" Feature and Q&A Data Type
+
+Monitor responses in the Activity tab. Use the revise button to modify answers—revised responses are added as Q&A data types, improving future accuracy.
+
+Updated responses appear in the Q&A tab under Sources.
+
+---
+
+<Card title="Next: Explore Playground Features" icon="flask" href="/user-guides/agent/playground">
+  Learn how to test and optimize your AI agent with the Playground
+</Card>
