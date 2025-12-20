@@ -32,6 +32,6 @@
   </g>
   
   <!-- Text -->
-  <text x="45" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#111827">Softius</text>
-  <text x="126" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="url(#logo-gradient)">Tech</text>
+  <text x="45" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#111827">Chat</text>
+  <text x="100" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="url(#logo-gradient)">Ros</text>
 </svg>

@@ -1,7 +1,7 @@
-# SoftiusTech Documentation Summary
+# ChatRos Documentation Summary
 
 ## Overview
-This documentation has been created based on Chatbase documentation structure and content, rebranded for SoftiusTech.
+This documentation has been created based on Chatbase documentation structure and content, rebranded for ChatRos.
 
 ## What Has Been Created
 
@@ -9,7 +9,7 @@ This documentation has been created based on Chatbase documentation structure an
 ```
 user-guides/
 ├── quick-start/
-│   ├── introduction.mdx          - Welcome page with SoftiusTech features
+│   ├── introduction.mdx          - Welcome page with ChatRos features
 │   ├── your-first-agent.mdx      - Step-by-step guide to create first agent
 │   └── best-practices.mdx        - Best practices for AI agent optimization
 │
@@ -29,15 +29,15 @@ user-guides/
 ### Configuration Updates
 
 **docs.json** has been updated with:
-- Name changed to "SoftiusTech Documentation"
+- Name changed to "ChatRos Documentation"
 - Navigation structure matching your frontend app
-- All references to Chatbase replaced with SoftiusTech
-- Links updated to softiustech.com domains
+- All references to Chatbase replaced with ChatRos
+- Links updated to chatros.com domains
 - Social media links updated
 
 ## Content Replacements
 
-All instances of "Chatbase" or "chatbase.co" have been replaced with "SoftiusTech" or "softiustech.com" throughout:
+All instances of "Chatbase" or "chatbase.co" have been replaced with "ChatRos" or "chatros.com" throughout:
 - Page titles and descriptions
 - Body content
 - Code examples
@@ -46,7 +46,7 @@ All instances of "Chatbase" or "chatbase.co" have been replaced with "SoftiusTec
 ## Pages Created
 
 ### Quick Start (3 pages)
-1. **Introduction** - Overview of SoftiusTech features and benefits
+1. **Introduction** - Overview of ChatRos features and benefits
 2. **Your First Agent** - Complete tutorial for creating, training, and deploying an agent
 3. **Best Practices** - Tips for optimizing agent performance
 
@@ -74,15 +74,15 @@ The documentation server is running at:
 
 1. **Images**:
    - Download images from Chatbase documentation
-   - Replace with SoftiusTech branded images
+   - Replace with ChatRos branded images
    - Update image URLs in MDX files
 
 2. **Logo**:
-   - Replace `/logo/light.svg` and `/logo/dark.svg` with SoftiusTech logos
-   - Update `/favicon.svg` with SoftiusTech favicon
+   - Replace `/logo/light.svg` and `/logo/dark.svg` with ChatRos logos
+   - Update `/favicon.svg` with ChatRos favicon
 
 3. **Content Customization**:
-   - Review all pages and customize content specific to SoftiusTech features
+   - Review all pages and customize content specific to ChatRos features
    - Update examples to match your use cases
    - Add or remove features based on your product
 
@@ -94,7 +94,7 @@ The documentation server is running at:
 
 5. **Links**:
    - Verify all internal links work correctly
-   - Update any external links to point to SoftiusTech resources
+   - Update any external links to point to ChatRos resources
 
 ## File Locations
 
