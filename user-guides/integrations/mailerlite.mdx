@@ -1,0 +1,104 @@
+---
+title: 'MailerLite Integration'
+description: 'Connect your MailerLite account to automatically manage subscribers from automation workflows.'
+---
+
+The MailerLite integration lets your ChatRos automations add or remove customers from your MailerLite groups and manage their tags — automatically triggered by real conversations.
+
+## Prerequisites
+
+- A MailerLite account with at least one Group created
+- A MailerLite API key (found under **Integrations → API** in your MailerLite dashboard)
+
+## Connecting Your Account
+
+<Steps>
+  <Step title="Open Integrations">
+    In your agent's sidebar, click **Integrations**. You'll see the integrations hub with all available providers.
+  </Step>
+  <Step title="Select MailerLite">
+    Click the **MailerLite** card. Any existing integrations will be listed here.
+  </Step>
+  <Step title="Add New Integration">
+    Click **Add Integration**, then fill in:
+
+    - **Name** — A label to identify this connection (e.g., "Newsletter List")
+    - **API Key** — Your MailerLite API key
+
+    Click **Connect**. ChatRos will verify the key against your MailerLite account.
+  </Step>
+  <Step title="Integration Ready">
+    Once connected, your MailerLite groups become available in any automation's MailerLite action node.
+  </Step>
+</Steps>
+
+## Available Actions in Automations
+
+Once connected, you can use four MailerLite actions inside any automation workflow:
+
+| Action | What it does |
+|--------|-------------|
+| **Add to Group** | Creates or updates the subscriber then assigns them to the selected group. First and last name are set automatically from `{{customerName}}`. |
+| **Remove from Group** | Removes the subscriber from the group (subscriber account is kept). |
+| **Add Tag** | Applies a tag to the subscriber. Supports `{{variables}}` for dynamic tag names. |
+| **Remove Tag** | Removes a tag from the subscriber. |
+
+<Tip>
+All MailerLite actions are silently skipped if `{{customerEmail}}` is not available in the conversation. Make sure your trigger or an upstream form node collects the customer's email first.
+</Tip>
+
+## Using MailerLite in a Workflow
+
+1. In the automation editor, add an **Action** node
+2. Set the action type to **MailerLite**
+3. Select the integration from the dropdown
+4. Choose the sub-action (Add to Group, Remove from Group, Add Tag, Remove Tag)
+5. Select the target group (or enter a tag name)
+6. Save and activate the automation
+
+For example, a **Conversation Started** trigger → **Reply with form** (collect email) → **MailerLite: Add to Group** workflow will enrol every new visitor who provides their email directly into your MailerLite group.
+
+## Mailchimp vs MailerLite
+
+Both integrations work the same way inside ChatRos automations. The main differences are on the provider side:
+
+| Feature | Mailchimp | MailerLite |
+|---------|-----------|------------|
+| Subscriber grouping | Audiences / Lists | Groups |
+| API authentication | API key with datacenter suffix | Bearer token (no suffix) |
+| Sub-action naming | Add/Remove from **List** | Add/Remove from **Group** |
+| Tag management | Identical | Identical |
+
+You can connect both providers simultaneously and use them in the same or different automation rules.
+
+## Managing Integrations
+
+- **Toggle Active/Inactive** — Pause a connection without deleting it. Inactive integrations are skipped during automation execution.
+- **Delete** — Removing an integration that is currently used by an active automation rule is blocked. Deactivate or update the automation first.
+- **API Key** — API keys cannot be updated after creation. To change a key, delete the integration and create a new one.
+
+<Warning>
+Deleting a MailerLite integration is permanent. Any automation rules that reference it will fail until you update them with a new integration.
+</Warning>
+
+---
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Building Workflows" icon="diagram-project" href="/user-guides/automations/building-workflows">
+    Learn how to use MailerLite inside an automation
+  </Card>
+  <Card title="Mailchimp Integration" icon="envelope" href="/user-guides/integrations/mailchimp">
+    Connect Mailchimp as an alternative email marketing provider
+  </Card>
+  <Card title="Klaviyo Integration" icon="bolt" href="/user-guides/integrations/klaviyo">
+    Connect Klaviyo for event tracking and advanced e-commerce flows
+  </Card>
+  <Card title="Template Gallery" icon="rectangle-history" href="/user-guides/automations/templates">
+    Use a lead-gen template with MailerLite pre-wired
+  </Card>
+  <Card title="Automations Overview" icon="bolt" href="/user-guides/automations/introduction">
+    Back to the Automations overview
+  </Card>
+</CardGroup>

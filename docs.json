@@ -29,6 +29,22 @@
               "user-guides/agent/activity",
               "user-guides/agent/analytics"
             ]
+          },
+          {
+            "group": "Automations",
+            "pages": [
+              "user-guides/automations/introduction",
+              "user-guides/automations/building-workflows",
+              "user-guides/automations/templates"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "user-guides/integrations/klaviyo",
+              "user-guides/integrations/mailchimp",
+              "user-guides/integrations/mailerlite"
+            ]
           }
         ]
       },

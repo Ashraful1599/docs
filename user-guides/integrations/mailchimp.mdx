@@ -1,0 +1,95 @@
+---
+title: 'Mailchimp Integration'
+description: 'Connect your Mailchimp account to automatically manage subscribers from automation workflows.'
+---
+
+The Mailchimp integration lets your ChatRos automations add or remove customers from your Mailchimp audiences and apply or remove tags — all triggered by real conversations, with no manual work.
+
+## Prerequisites
+
+- A Mailchimp account with at least one Audience created
+- A Mailchimp API key (found in your Mailchimp account settings)
+
+<Note>
+Your Mailchimp API key must include the datacenter suffix — for example, `abc123def456-us21`. If yours doesn't look like this, regenerate it from the Mailchimp dashboard.
+</Note>
+
+## Connecting Your Account
+
+<Steps>
+  <Step title="Open Integrations">
+    In your agent's sidebar, click **Integrations**. You'll see the integrations hub with all available providers.
+  </Step>
+  <Step title="Select Mailchimp">
+    Click the **Mailchimp** card. If you have existing integrations they'll be listed here.
+  </Step>
+  <Step title="Add New Integration">
+    Click **Add Integration**, then fill in:
+
+    - **Name** — A label to identify this connection (e.g., "Main Store List")
+    - **API Key** — Your Mailchimp API key including the `-us21` style suffix
+
+    Click **Connect**. ChatRos will verify the key against your Mailchimp account.
+  </Step>
+  <Step title="Integration Ready">
+    Once connected, your Mailchimp audiences become available in any automation's Mailchimp action node.
+  </Step>
+</Steps>
+
+## Available Actions in Automations
+
+Once connected, you can use four Mailchimp actions inside any automation workflow:
+
+| Action | What it does |
+|--------|-------------|
+| **Add to List** | Subscribes the customer to the selected audience. First and last name are set automatically from `{{customerName}}`. |
+| **Remove from List** | Archives the subscriber from the audience (Mailchimp soft-delete). |
+| **Add Tag** | Applies a tag to the subscriber. Supports `{{variables}}` for dynamic tag names. |
+| **Remove Tag** | Removes a tag from the subscriber. |
+
+<Tip>
+All Mailchimp actions are silently skipped if `{{customerEmail}}` is not available in the conversation. Make sure your trigger or an upstream form node collects the customer's email first.
+</Tip>
+
+## Using Mailchimp in a Workflow
+
+1. In the automation editor, add an **Action** node
+2. Set the action type to **Mailchimp**
+3. Select the integration from the dropdown
+4. Choose the sub-action (Add to List, Remove from List, Add Tag, Remove Tag)
+5. Select the target audience (or enter a tag name)
+6. Save and activate the automation
+
+For example, a **Conversation Started** trigger → **Reply with form** (collect email) → **Mailchimp: Add to List** workflow will subscribe every new visitor who provides their email.
+
+## Managing Integrations
+
+- **Toggle Active/Inactive** — Pause a connection without deleting it. Inactive integrations are skipped during automation execution.
+- **Delete** — Removing an integration that is currently used by an active automation rule is blocked. Deactivate or update the automation first.
+- **API Key** — API keys cannot be updated after creation. To change a key, delete the integration and create a new one.
+
+<Warning>
+Deleting a Mailchimp integration is permanent. Any automation rules that reference it will fail until you update them with a new integration.
+</Warning>
+
+---
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Building Workflows" icon="diagram-project" href="/user-guides/automations/building-workflows">
+    Learn how to use Mailchimp inside an automation
+  </Card>
+  <Card title="MailerLite Integration" icon="envelope-open-text" href="/user-guides/integrations/mailerlite">
+    Connect MailerLite as an alternative email marketing provider
+  </Card>
+  <Card title="Klaviyo Integration" icon="bolt" href="/user-guides/integrations/klaviyo">
+    Connect Klaviyo for event tracking and advanced e-commerce flows
+  </Card>
+  <Card title="Template Gallery" icon="rectangle-history" href="/user-guides/automations/templates">
+    Use a lead-gen template with Mailchimp pre-wired
+  </Card>
+  <Card title="Automations Overview" icon="bolt" href="/user-guides/automations/introduction">
+    Back to the Automations overview
+  </Card>
+</CardGroup>

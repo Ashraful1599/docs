@@ -1,0 +1,195 @@
+---
+title: 'Building Workflows'
+description: 'Create automation rules using the visual node-graph editor.'
+---
+
+The automation editor gives you a visual canvas where you connect nodes to build multi-step workflows. Every workflow starts with a **Trigger** node and flows through any combination of **Action**, **Condition**, and **AI Step** nodes.
+
+## Opening the Editor
+
+1. Go to your agent's sidebar and click **Automations**
+2. Click **New Automation** to open a blank canvas, or click an existing rule to edit it
+3. Give your automation a name and click into the canvas to start building
+
+## Node Types
+
+<CardGroup cols={2}>
+  <Card title="Trigger" icon="bolt">
+    The starting point of every workflow. Set it to **Conversation Started**, **Product Inquiry**, **Order Inquiry**, or **Custom Keyword**.
+  </Card>
+  <Card title="Action" icon="play">
+    Performs an operation: send a reply, add to a Mailchimp list, fire a webhook, send an email, and more.
+  </Card>
+  <Card title="Condition (If/Else)" icon="code-branch">
+    Evaluates a variable and routes the workflow down one of two branches depending on whether the condition is true or false.
+  </Card>
+  <Card title="AI Step" icon="brain">
+    Calls the AI with a custom prompt. The output is stored in a named variable you can use in downstream nodes.
+  </Card>
+</CardGroup>
+
+## Creating a Workflow
+
+<Steps>
+  <Step title="Set Your Trigger">
+    Click the **Trigger** node on the canvas and choose when this automation should fire.
+
+    For **Custom Keyword**, enter one or more keywords and choose **Any** (fires if any keyword matches) or **All** (every keyword must appear in the message).
+  </Step>
+  <Step title="Add an Action Node">
+    Click the **+** button that appears on the edge of any node, or drag a new node from the sidebar panel onto the canvas.
+
+    Connect nodes by dragging from one node's output handle to another node's input handle.
+  </Step>
+  <Step title="Configure the Action">
+    Click any Action node to open its configuration panel on the right. Select the action type and fill in the required fields.
+
+    See [Action Types](#action-types) below for all available options.
+  </Step>
+  <Step title="Add Conditions (Optional)">
+    Insert a **Condition** node between two Action nodes to branch the workflow based on customer data.
+
+    Each condition evaluates a **variable** (e.g., `customerEmail`, `channelType`) using an operator, then routes to either the **True** or **False** branch.
+  </Step>
+  <Step title="Test and Save">
+    Click **Test** to simulate the automation against a sample conversation. Review the output, then click **Save** to activate.
+
+    Toggle the **Active** switch on the automation list page to pause or resume a rule at any time.
+  </Step>
+</Steps>
+
+## Action Types
+
+### Reply
+
+Send a message back to the customer directly through the chat. Reply actions run **before** the AI responds — they replace the AI reply entirely.
+
+| Option | Description |
+|--------|-------------|
+| **Text** | A plain-text message. Supports `{{variables}}` for personalisation. |
+| **File** | Share a file by entering its URL and display name. |
+| **Form** | Display a dynamic form with custom fields to collect customer information. |
+
+<Note>
+When a customer submits a form, the workflow automatically resumes and maps form values as `{{form_fieldname}}` variables for use in downstream nodes.
+</Note>
+
+### Email
+
+Send an email notification to any address when the automation fires.
+
+| Field | Description |
+|-------|-------------|
+| **To** | Recipient email address. Supports `{{variables}}`. |
+| **Subject** | Email subject line. |
+| **Body** | Email body template. Supports `{{variables}}` and markdown. |
+| **Reply To** | Optional reply-to address. |
+| **CC / BCC** | Optional additional recipients. |
+
+### Webhook
+
+Send conversation data to an external URL via HTTP.
+
+| Field | Description |
+|-------|-------------|
+| **URL** | The endpoint to call. |
+| **Method** | GET, POST, PUT, or DELETE. |
+| **Auth** | None, Bearer Token, API Key, or Basic Auth. |
+| **Body Template** | JSON body with `{{variable}}` placeholders. |
+
+The webhook response is stored in `{{webhook_response}}` and available to downstream nodes.
+
+### Mailchimp
+
+Add or remove a subscriber from your Mailchimp audience, or manage their tags. Requires a [Mailchimp integration](/user-guides/integrations/mailchimp) to be connected first.
+
+| Sub-action | What it does |
+|------------|-------------|
+| `add_to_list` | Subscribes the customer to a selected audience |
+| `remove_from_list` | Archives the subscriber from the audience |
+| `add_tag` | Applies a tag to the subscriber |
+| `remove_tag` | Removes a tag from the subscriber |
+
+### MailerLite
+
+Add or remove a subscriber from your MailerLite group, or manage their tags. Requires a [MailerLite integration](/user-guides/integrations/mailerlite) to be connected first.
+
+| Sub-action | What it does |
+|------------|-------------|
+| `add_to_group` | Adds the customer to a selected subscriber group |
+| `remove_from_group` | Removes the customer from the group |
+| `add_tag` | Applies a tag to the subscriber |
+| `remove_tag` | Removes a tag from the subscriber |
+
+### AI Step
+
+Run a custom AI prompt mid-workflow and store the result in a variable.
+
+| Field | Description |
+|-------|-------------|
+| **Prompt Template** | Your instruction to the AI. Supports `{{variables}}`. |
+| **Output Variable** | The name to store the result under (e.g., `sentiment`). Use it downstream as `{{sentiment}}`. |
+
+## Available Variables
+
+Use `{{variable}}` in any text field, body template, or prompt. ChatRos automatically populates these from the current conversation:
+
+| Variable | Value |
+|----------|-------|
+| `{{customerName}}` | Customer's display name |
+| `{{customerEmail}}` | Customer's email address |
+| `{{customerPhone}}` | Customer's phone number |
+| `{{conversationId}}` | Unique conversation ID |
+| `{{agentName}}` | Your agent's name |
+| `{{workspaceName}}` | Your workspace name |
+| `{{channelType}}` | Channel (e.g., `whatsapp`, `messenger`, `widget`) |
+| `{{message}}` | The customer's most recent message |
+| `{{country}}`, `{{city}}` | Geolocation data (if available) |
+| `{{timestamp}}` | Current date and time (ISO 8601) |
+| `{{form_fieldname}}` | Value from a submitted form field |
+| `{{outputVariable}}` | Output from an AI Step node |
+
+## Condition Operators
+
+Condition nodes support the following comparison operators:
+
+| Operator | Description |
+|----------|-------------|
+| `equals` / `not_equals` | Exact match |
+| `contains` / `not_contains` | Substring match |
+| `starts_with` / `ends_with` | Prefix or suffix match |
+| `greater_than` / `less_than` | Numeric comparison |
+| `greater_than_or_equal` / `less_than_or_equal` | Numeric comparison with equality |
+| `is_empty` / `is_not_empty` | Checks if the variable has a value |
+| `matches_regex` | Tests against a regular expression |
+
+## Testing Your Automation
+
+Click the **Test** button while in the editor to simulate a conversation event. ChatRos will walk through your node graph and show you:
+
+- Which nodes were reached
+- What data each action would have sent
+- Any errors in template variables or missing configuration
+
+<Warning>
+Test mode does **not** send real emails, call live webhooks, or modify Mailchimp/MailerLite subscribers. It is a dry run only.
+</Warning>
+
+---
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Template Gallery" icon="rectangle-history" href="/user-guides/automations/templates">
+    Start from a pre-built template instead of building from scratch
+  </Card>
+  <Card title="Mailchimp Integration" icon="envelope" href="/user-guides/integrations/mailchimp">
+    Connect your Mailchimp account
+  </Card>
+  <Card title="MailerLite Integration" icon="envelope-open-text" href="/user-guides/integrations/mailerlite">
+    Connect your MailerLite account
+  </Card>
+  <Card title="Automations Overview" icon="bolt" href="/user-guides/automations/introduction">
+    Back to the Automations overview
+  </Card>
+</CardGroup>

@@ -1,0 +1,130 @@
+---
+title: 'Klaviyo Integration'
+description: 'Connect your Klaviyo account to automatically sync subscribers and track events from automation workflows.'
+---
+
+The Klaviyo integration lets your ChatRos automations add customers to your Klaviyo lists, update contact properties, and track custom events — all triggered automatically by real conversations across any channel.
+
+## Prerequisites
+
+- A Klaviyo account with at least one List created
+- A Klaviyo API key (Public Key starting with `pk_` or Private Key starting with `sk_`) — found under **Settings → API Keys** in your Klaviyo account
+
+## Connecting Your Account
+
+<Steps>
+  <Step title="Open Integrations">
+    In your agent's sidebar, click **Integrations**. You'll see the integrations hub with all available providers.
+  </Step>
+  <Step title="Select Klaviyo">
+    Click the **Klaviyo** card. Any existing integrations will be listed here.
+  </Step>
+  <Step title="Add New Integration">
+    Click **Add Integration**, then fill in:
+
+    - **Name** — A label to identify this connection (e.g., "Main Store List")
+    - **API Key** — Your Klaviyo API key (must start with `pk_` or `sk_`)
+
+    Click **Connect**. ChatRos will verify the key against your Klaviyo account before saving.
+  </Step>
+  <Step title="Integration Ready">
+    Once connected, your Klaviyo lists become available in any automation's Klaviyo action node.
+  </Step>
+</Steps>
+
+<Note>
+ChatRos automatically retrieves your Klaviyo account name when connecting, so you can identify integrations easily if you have multiple Klaviyo accounts.
+</Note>
+
+## Available Actions in Automations
+
+Once connected, you can use four Klaviyo actions inside any automation workflow:
+
+| Action | What it does |
+|--------|-------------|
+| **Add to List** | Adds the customer to the selected Klaviyo list. First name, last name, phone, and channel data are synced automatically. |
+| **Remove from List** | Looks up the customer in Klaviyo by email and removes them from the selected list. |
+| **Tag Properties** | Updates the contact's custom properties in Klaviyo with any key-value pairs you define. Supports `{{variables}}`. |
+| **Track Event** | Records a custom Klaviyo metric/event against the customer's profile. Use this to trigger Klaviyo Flows. |
+
+### What Gets Synced Automatically
+
+When you use **Add to List**, ChatRos automatically sends the following data to Klaviyo — no configuration needed:
+
+| Klaviyo Field | Source |
+|--------------|--------|
+| `email` | Customer email from the conversation |
+| `first_name` / `last_name` | Split from `{{customerName}}` |
+| `phone_number` | Customer phone number |
+| `agent_name` | Your agent's name |
+| `workspace_name` | Your workspace name |
+| `channel_type` | Channel (e.g., `whatsapp`, `messenger`, `widget`) |
+| `country`, `city` | Geolocation data (if available) |
+| `conversation_id` | Unique conversation identifier |
+| `last_interaction` | Timestamp of the interaction |
+
+### Tracking Custom Events
+
+The **Track Event** action lets you send any named metric to Klaviyo, which can then trigger Klaviyo Flows. For example:
+
+- `Product Inquiry` — fire when a customer asks about products
+- `Order Inquiry` — fire when a customer checks on an order
+- `High Intent Visitor` — fire when a custom keyword is matched
+
+Event property values support `{{variables}}` for dynamic content from the conversation.
+
+## Using Klaviyo in a Workflow
+
+1. In the automation editor, add an **Action** node
+2. Set the action type to **Klaviyo**
+3. Select the integration from the dropdown
+4. Choose the sub-action (Add to List, Remove from List, Tag Properties, Track Event)
+5. Select the target list, or enter the event name and properties
+6. Save and activate the automation
+
+<Tip>
+Combine a **Reply with Form** node (to collect the customer's email) with a **Klaviyo: Add to List** node to build a lead capture workflow that runs automatically on every new conversation.
+</Tip>
+
+## Managing Integrations
+
+- **Toggle Active/Inactive** — Pause a connection without deleting it. Inactive integrations are skipped during automation execution.
+- **Delete** — Removing an integration that is currently referenced by an active automation rule is blocked. Deactivate or update the automation first.
+- **API Key** — API keys cannot be updated after creation. To change a key, delete the integration and create a new one.
+
+<Warning>
+Deleting a Klaviyo integration is permanent. Any automation rules that reference it will fail until you update them with a new integration.
+</Warning>
+
+## Klaviyo vs Mailchimp vs MailerLite
+
+All three email marketing integrations work the same way inside ChatRos automations. The differences are on the provider side:
+
+| Feature | Klaviyo | Mailchimp | MailerLite |
+|---------|---------|-----------|------------|
+| Subscriber grouping | Lists | Audiences | Groups |
+| Custom event tracking | ✅ Track Event action | ❌ | ❌ |
+| Custom property updates | ✅ Tag Properties action | ❌ | ❌ |
+| API key format | Starts with `pk_` or `sk_` | Includes datacenter suffix (e.g., `-us21`) | Standard bearer token |
+| Best for | E-commerce + event-driven flows | Large-scale email lists | Simpler newsletter workflows |
+
+You can connect all three providers simultaneously and use them in the same or different automation rules.
+
+---
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Building Workflows" icon="diagram-project" href="/user-guides/automations/building-workflows">
+    Learn how to use Klaviyo inside an automation
+  </Card>
+  <Card title="Mailchimp Integration" icon="envelope" href="/user-guides/integrations/mailchimp">
+    Connect Mailchimp as an alternative
+  </Card>
+  <Card title="MailerLite Integration" icon="envelope-open-text" href="/user-guides/integrations/mailerlite">
+    Connect MailerLite as an alternative
+  </Card>
+  <Card title="Template Gallery" icon="rectangle-history" href="/user-guides/automations/templates">
+    Start from a pre-built automation template
+  </Card>
+</CardGroup>
