@@ -1,0 +1,93 @@
+---
+title: "Chat Widget"
+description: "Add your AI agent as a chat bubble on your website with a single copy‑paste snippet."
+---
+
+The **Chat Widget** puts a chat bubble in the corner of your website. Visitors click it to talk to your agent — and every conversation lands in your Inbox. No coding required; you paste one small snippet into your site.
+
+## Step 1 — Open the widget settings
+
+From your agent, go to **Deploy → Chat widget → Configure Widget**. The configuration screen has three tabs — **Basic Settings**, **Widget Appearance**, and **Widget Script** — with a **Live Preview** on the right that updates as you edit.
+
+<Frame caption="The Chat Widget configuration screen, with a live preview.">
+  <img src="/images/user-guides/deploy/widget-config.png" alt="Chat Widget configuration — Basic Settings tab with live preview" />
+</Frame>
+
+## Step 2 — Set the basics
+
+On the **Basic Settings** tab, set how the widget introduces itself:
+
+<Steps>
+  <Step title="Agent name">
+    The name shown in the widget header (e.g. *Askie*, *Shop Assistant*).
+  </Step>
+  <Step title="Welcome message">
+    The first message visitors see, e.g. *"Hi! How can I help you today?"*
+  </Step>
+  <Step title="Suggested messages">
+    Optional quick‑reply prompts that give visitors a starting point.
+  </Step>
+</Steps>
+
+## Step 3 — Customize the appearance
+
+On the **Widget Appearance** tab, match the widget to your brand:
+
+- **Position** — Bottom Right, Bottom Left, Top Right, or Top Left.
+- **Primary color** — brand color for buttons, headers, and accents (e.g. `#3063eb`).
+- **Theme** — Light or Dark.
+- **Agent avatar** — upload an image or paste an image URL (leave empty for the default).
+
+<Frame caption="The Widget Appearance tab — position, color, theme, and avatar.">
+  <img src="/images/user-guides/deploy/widget-appearance.png" alt="Chat Widget appearance settings with live preview" />
+</Frame>
+
+<Tip>
+  The live preview on the right updates as you edit, so you can see exactly how the widget will look before installing it.
+</Tip>
+
+## Step 4 — Install the snippet
+
+Open the **Widget Script** tab and click **Copy Code**. You'll get a snippet like this:
+
+```html
+<script>
+    window.AIAgent = {
+        agentId: 'your-agent-id'
+    };
+</script>
+<script src="https://chatros.com/widget.min.js"></script>
+```
+
+<Warning>
+  Always copy the snippet from your own dashboard — it contains your agent's unique ID. The example above is illustrative.
+</Warning>
+
+Paste it into your website's HTML, just before the closing `</body>` tag, on every page where you want the widget to appear. Your settings (name, colors, welcome message) are loaded automatically from ChatRos, so you never have to edit the snippet when you change them.
+
+<AccordionGroup>
+  <Accordion title="WordPress" icon="wordpress">
+    Add the snippet via your theme's footer, a "custom HTML/scripts" setting, or a plugin like *Insert Headers and Footers*. Prefer the [WooCommerce plugin](/user-guides/deploy/woocommerce) if you also want live product and order lookups.
+  </Accordion>
+  <Accordion title="Shopify" icon="shopify">
+    Don't paste the script. Shopify stores install the widget through the **ChatRos theme app embed** instead — see the [Shopify guide](/user-guides/deploy/shopify). Enable the ChatRos app embed in your theme editor and the widget appears automatically.
+  </Accordion>
+  <Accordion title="Any other site builder" icon="code">
+    Most builders (Webflow, Wix, Squarespace, custom HTML) have a place to add custom code or an embed/HTML block. Paste the snippet there.
+  </Accordion>
+</AccordionGroup>
+
+## Step 5 — Restrict to your domains (optional)
+
+In the widget settings you can list the domains the widget is allowed to load on (e.g. `example.com`, `shop.example.com`). This prevents the widget from being embedded on sites you don't control.
+
+## Verify it works
+
+Reload your website. The chat bubble should appear in the corner you chose. Send a test message — it will be answered by your agent and appear in your **Inbox**.
+
+{/* SHOT: deploy/widget-live.png | The live chat widget open on a website */}
+<Note>📸 Screenshot: the live chat widget open on a website *(to be added)*.</Note>
+
+<Card title="Add live product lookups" icon="cart-shopping" href="/user-guides/deploy/shopify">
+  Running an online store? Connect Shopify or WooCommerce so the agent can answer product and order questions.
+</Card>

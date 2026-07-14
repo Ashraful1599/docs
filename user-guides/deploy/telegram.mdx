@@ -1,0 +1,65 @@
+---
+title: "Telegram"
+description: "Connect a Telegram bot so your agent handles 1‑on‑1 customer chats automatically."
+---
+
+Connect a Telegram bot and your agent will automatically reply to private messages sent to it. Telegram uses a **bot token** from Telegram's official @BotFather — no Facebook or OAuth involved.
+
+<Note>
+  Only **1‑on‑1 private chats** are supported. Messages sent in Telegram groups are ignored.
+</Note>
+
+## Step 1 — Create a bot with @BotFather
+
+<Steps>
+  <Step title="Open @BotFather">
+    In Telegram, search for **@BotFather** and open the chat.
+  </Step>
+  <Step title="Send /newbot">
+    Send the command `/newbot` and follow the prompts to name your bot and choose a username.
+  </Step>
+  <Step title="Copy the bot token">
+    BotFather replies with a token that looks like `123456789:ABCdefGHIjklMNOpqrsTUVwxyz`. Copy it — you'll paste it into ChatRos next.
+  </Step>
+</Steps>
+
+{/* SHOT: deploy/telegram-botfather.png | BotFather chat showing the /newbot flow and token */}
+<Note>📸 Screenshot: the @BotFather chat showing the `/newbot` flow and the generated token *(to be added)*.</Note>
+
+## Step 2 — Connect the bot in ChatRos
+
+<Steps>
+  <Step title="Open the Telegram channel">
+    From your agent, go to **Deploy → Integration Channels → Telegram Bot**.
+
+    <Frame caption="The Telegram Bot Setup page — prerequisites and the Bot Token form.">
+      <img src="/images/user-guides/deploy/telegram-panel.png" alt="Telegram Bot Setup with prerequisites and Bot Token field" />
+    </Frame>
+  </Step>
+  <Step title="Paste your bot token">
+    Paste the token into the **Bot Token** field. Optionally give the channel a name (e.g. *Customer Support Bot*) — if you leave it blank, it's generated from the bot's username.
+  </Step>
+  <Step title="Click “Connect Bot”">
+    ChatRos configures the webhook with Telegram automatically. You'll see a **Telegram Bot Connected!** confirmation with your bot's username, ID, and status.
+
+    {/* SHOT: deploy/telegram-connected.png | The "Telegram Bot Connected!" success state */}
+    <Note>📸 Screenshot: the **Telegram Bot Connected!** success state *(to be added)*.</Note>
+  </Step>
+  <Step title="Test it">
+    Message your bot on Telegram (`@your_bot_username`) — your agent replies automatically.
+  </Step>
+</Steps>
+
+## What your agent can do on Telegram
+
+- **Reply automatically** to private messages.
+- **Send and receive images**.
+- **Show a typing indicator**.
+
+<Warning>
+  Telegram does **not** provide delivery or read receipts. This is a Telegram platform limitation — unlike WhatsApp, Messenger, and Instagram, there's no "seen" status to report.
+</Warning>
+
+## Manage or disconnect
+
+Return to **Deploy → Telegram Bot** to view the connected bot or click **Disconnect Bot** to stop handling its messages.

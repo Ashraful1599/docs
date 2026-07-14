@@ -1,0 +1,71 @@
+---
+title: "Shopify"
+description: "Add your agent to a Shopify store so it looks up live products and order status."
+---
+
+Connect your Shopify store and your agent can answer real questions about your catalog and orders — *"Do you have this in medium?"*, *"Where's my order?"* — using live, read‑only data from Shopify. You also install the on‑site chat widget through Shopify's theme editor, with no code.
+
+<Note>
+  ChatRos reads your products and order status **read‑only**. It never modifies your store, products, or orders.
+</Note>
+
+## Step 1 — Install the ChatRos Shopify app
+
+<Steps>
+  <Step title="Install from the Shopify App Store">
+    Install the **ChatRos** app from the [Shopify App Store](https://apps.shopify.com/) (or from your Shopify admin → **Apps**). Installing it links your store to your ChatRos workspace automatically.
+  </Step>
+  <Step title="Approve the connection">
+    Follow Shopify's install prompts and approve the requested permissions.
+  </Step>
+</Steps>
+
+{/* SHOT: deploy/shopify-app-install.png | ChatRos app install screen in the Shopify admin */}
+<Note>📸 Screenshot: the ChatRos app install screen in the Shopify admin *(to be added)*.</Note>
+
+## Step 2 — Connect the store to your agent
+
+<Steps>
+  <Step title="Open the Shopify integration">
+    In ChatRos, go to your agent → **Integrations → Shopify**.
+
+    <Frame caption="The Shopify integration page.">
+      <img src="/images/user-guides/deploy/shopify-connect.png" alt="Shopify integration page with Connect Shopify store button" />
+    </Frame>
+  </Step>
+  <Step title="Click “Connect Shopify store”">
+    This links the Shopify store already connected to your workspace to *this* agent. Once connected, you'll see a green **● Connected** badge with your store URL.
+  </Step>
+</Steps>
+
+<Tip>
+  If ChatRos says no store is linked yet, install the ChatRos app from your Shopify admin first (Step 1), then come back and click **Connect Shopify store**.
+</Tip>
+
+## Step 3 — Show the chat widget on your storefront
+
+Shopify stores install the chat widget through Shopify's **theme app embed** — you never paste a script.
+
+<Steps>
+  <Step title="Open the theme editor">
+    From the Chat Widget's **Script** tab in ChatRos, use the button to open your Shopify theme editor with the ChatRos embed pre‑selected.
+  </Step>
+  <Step title="Enable the ChatRos app embed">
+    Toggle the **ChatRos** app embed on, then **Save**. The widget appears on your storefront automatically.
+  </Step>
+</Steps>
+
+{/* SHOT: deploy/shopify-app-embed.png | Shopify theme editor with the ChatRos app embed toggle */}
+<Note>📸 Screenshot: the Shopify theme editor with the ChatRos app embed enabled *(to be added)*.</Note>
+
+## Verify it works
+
+Open your storefront and ask the agent about a product you sell, or an order number. It should answer using live data from your store.
+
+## Manage or disconnect
+
+Return to **Integrations → Shopify** to see the connected store or click **Disconnect**.
+
+<Card title="On WordPress instead?" icon="wordpress" href="/user-guides/deploy/woocommerce">
+  Use the ChatRos WordPress plugin to connect a WooCommerce store.
+</Card>

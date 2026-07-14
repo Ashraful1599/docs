@@ -1,0 +1,66 @@
+---
+title: "WhatsApp"
+description: "Connect a WhatsApp Business number so your agent reads and replies to customer messages automatically."
+---
+
+Connect your WhatsApp Business number and your agent will automatically read and reply to messages sent to it — with full support for images, typing indicators, and read receipts. Connecting takes one click through Meta's official Embedded Signup; there are no tokens or webhooks to configure.
+
+## Before you connect
+
+<Steps>
+  <Step title="A Meta Business account">
+    You'll sign in with Facebook during setup.
+  </Step>
+  <Step title="A phone number you can verify">
+    Meta sends a one‑time code to confirm the number.
+  </Step>
+  <Step title="The number must be free">
+    It must **not** already be active on a personal WhatsApp or the WhatsApp Business app. If it is, remove it there first.
+  </Step>
+</Steps>
+
+## Connect WhatsApp
+
+<Steps>
+  <Step title="Open the WhatsApp channel">
+    From your agent, go to **Deploy → Integration Channels → WhatsApp**.
+
+    <Frame caption="The WhatsApp connect panel.">
+      <img src="/images/user-guides/deploy/whatsapp-panel.png" alt="Connect WhatsApp panel with one-click Connect with WhatsApp button" />
+    </Frame>
+  </Step>
+  <Step title="Click “Connect with WhatsApp”">
+    A Facebook popup opens. Sign in and follow the WhatsApp Business prompts.
+  </Step>
+  <Step title="Choose or add your number">
+    Select an existing WhatsApp Business number or add a new one, then verify it with the one‑time code Meta sends.
+
+    {/* SHOT: deploy/whatsapp-signup.png | Meta Embedded Signup popup with the phone-number step */}
+    <Note>📸 Screenshot: Meta's Embedded Signup popup at the phone‑number step *(to be added)*.</Note>
+  </Step>
+  <Step title="Done">
+    When the popup closes, you'll see a **WhatsApp Connected!** confirmation with your number and status. No further setup is needed.
+
+    {/* SHOT: deploy/whatsapp-connected.png | The "WhatsApp Connected!" success state */}
+    <Note>📸 Screenshot: the **WhatsApp Connected!** success state *(to be added)*.</Note>
+  </Step>
+</Steps>
+
+<Warning>
+  If you complete the Facebook popup but don't finish the phone‑number step, ChatRos can't read your number and will ask you to try again. Make sure you complete the phone‑number verification inside the popup.
+</Warning>
+
+## What your agent can do on WhatsApp
+
+- **Reply automatically** to any message sent to your connected number.
+- **Send and receive images** — customers can send a photo, and your agent can reply with product pictures.
+- **Show a typing indicator** while composing a reply.
+- **Report delivery and read receipts** back into your Inbox.
+
+## Manage or disconnect
+
+Return to **Deploy → WhatsApp** anytime to view the connected number or click **Disconnect** to stop handling messages for it.
+
+<Card title="See conversations" icon="inbox" href="/user-guides/agent/activity">
+  Connected messages appear in your agent's Inbox — click **View Conversations** on the WhatsApp panel to jump there.
+</Card>

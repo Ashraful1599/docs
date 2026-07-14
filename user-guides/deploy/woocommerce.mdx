@@ -1,0 +1,58 @@
+---
+title: "WooCommerce"
+description: "Connect a WooCommerce store with the ChatRos WordPress plugin so your agent looks up live products and orders."
+---
+
+Connect your WooCommerce store using the free **ChatRos WordPress plugin** and your agent can answer questions about your catalog and order status using live, read‑only data — no code required.
+
+<Note>
+  ChatRos reads your products and order status **read‑only**. It never modifies your store.
+</Note>
+
+## Step 1 — Get the plugin and your API key
+
+<Steps>
+  <Step title="Open the WooCommerce integration">
+    In ChatRos, go to your agent → **Integrations → WooCommerce**.
+
+    <Frame caption="The WooCommerce integration page — plugin download and Agent API key.">
+      <img src="/images/user-guides/deploy/woo-connect.png" alt="WooCommerce integration page with Download plugin button and masked Agent API key" />
+    </Frame>
+  </Step>
+  <Step title="Download the ChatRos plugin">
+    Click **Download WooCommerce plugin** to get the plugin `.zip`.
+  </Step>
+  <Step title="Copy your Agent API key">
+    Click **Copy** next to the **Agent API key**. You'll paste this into the plugin. Keep it private — it's how the plugin authenticates to your agent.
+  </Step>
+</Steps>
+
+## Step 2 — Install the plugin in WordPress
+
+<Steps>
+  <Step title="Upload the plugin">
+    In your WordPress admin, go to **Plugins → Add New → Upload Plugin**, choose the `.zip` you downloaded, and click **Install Now**.
+  </Step>
+  <Step title="Activate it">
+    Click **Activate** once the upload finishes.
+  </Step>
+</Steps>
+
+{/* SHOT: deploy/woo-plugin-settings.png | ChatRos plugin settings in WordPress with the API key field */}
+<Note>📸 Screenshot: the ChatRos plugin settings in WordPress with the API key field *(to be added)*.</Note>
+
+## Step 3 — Connect
+
+In the ChatRos plugin's settings, paste the **Agent API key** you copied and click **Connect**. Back in ChatRos, the WooCommerce integration shows a green **● Connected** badge with your store URL.
+
+## Verify it works
+
+Ask your agent about a product you sell, or an order number. It should answer using live data from your WooCommerce store.
+
+## Manage or disconnect
+
+Return to **Integrations → WooCommerce** to see the connection status or disconnect. You can also deactivate the plugin in WordPress to stop sharing store data.
+
+<Card title="Add the chat widget too" icon="comment-dots" href="/user-guides/deploy/chat-widget">
+  Show the agent on your WordPress site by adding the chat widget snippet.
+</Card>

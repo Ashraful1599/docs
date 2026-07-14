@@ -1,0 +1,74 @@
+---
+title: "Importing Products"
+description: "Bulk‑import your catalog from a CSV file, or sync it live from Shopify, WooCommerce, Medusa, or Google Sheets."
+---
+
+For anything larger than a handful of products, import in bulk. You have two options: a one‑time **CSV import**, or a live **source sync** that keeps your catalog up to date with your store or spreadsheet.
+
+## Option A — Import a CSV
+
+<Steps>
+  <Step title="Click “Import CSV”">
+    On **Training → Catalog**, click **Import CSV** and choose your file.
+  </Step>
+  <Step title="Map your columns">
+    ChatRos previews the file and asks you to match your spreadsheet columns to catalog fields: **title, description, price, sku, tags, url, imageUrl**. Map each one, then click **Import**.
+
+    <Frame caption="The “Map your columns” screen — ChatRos pre-fills its best guesses.">
+      <img src="/images/user-guides/catalog/csv-mapping.png" alt="Map your columns screen matching CSV columns to catalog fields" />
+    </Frame>
+  </Step>
+  <Step title="Wait for processing">
+    You'll see progress as ChatRos reads, uploads, and saves your products. When it's done, they appear in the table and are queued for training.
+  </Step>
+</Steps>
+
+<Tip>
+  Not sure of the format? Click **Export CSV** first to download a file with the exact columns ChatRos expects, fill it in, and re‑import.
+</Tip>
+
+## Option B — Sync from a live source
+
+Connect a source once and pull products automatically — and re‑sync whenever your store changes. Supported sources:
+
+<CardGroup cols={2}>
+  <Card title="Shopify" icon="shopify">
+    Products and variants from your Shopify store.
+  </Card>
+  <Card title="WooCommerce" icon="wordpress">
+    Products from your WooCommerce store via the ChatRos plugin.
+  </Card>
+  <Card title="Medusa" icon="cart-shopping">
+    Products from your Medusa backend.
+  </Card>
+  <Card title="Google Sheets" icon="table">
+    Products from a spreadsheet you choose — map the columns once and keep them in sync.
+  </Card>
+</CardGroup>
+
+### Connect a source
+
+<Steps>
+  <Step title="Open Catalog Sources">
+    On the Catalog page, click **Connect Source** (if nothing is connected yet) or the settings gear next to **Sync**. This opens the **Catalog Sources** page.
+
+    <Frame caption="The Catalog Sources page — connect Google Sheets, WooCommerce, Shopify, or Medusa.">
+      <img src="/images/user-guides/catalog/sources.png" alt="Catalog Sources page with Google Sheets, WooCommerce, Shopify, and Medusa cards" />
+    </Frame>
+  </Step>
+  <Step title="Connect your store or spreadsheet">
+    Pick a source and follow its connect flow. For stores, see the [Shopify](/user-guides/deploy/shopify) and [WooCommerce](/user-guides/deploy/woocommerce) guides. For **Google Sheets**, choose your spreadsheet and map the product columns once.
+  </Step>
+</Steps>
+
+### Sync
+
+Back on the Catalog page, click **Sync** to pull the latest products from every connected source. ChatRos syncs the store first, then any connected spreadsheet, and re‑trains what changed.
+
+<Note>
+  Products carry a **Source** column so you can see whether each item was added manually, imported from CSV, or synced from a store/spreadsheet.
+</Note>
+
+<Card title="Set up image search" icon="image" href="/user-guides/catalog/image-search">
+  With products and images in place, let customers find items by sending a photo.
+</Card>

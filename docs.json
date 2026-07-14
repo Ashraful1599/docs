@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "ChatRos Documentation",
   "colors": {
-    "primary": "#3B82F6",
-    "light": "#60A5FA",
-    "dark": "#1D4ED8"
+    "primary": "#4F46E5",
+    "light": "#7C3AED",
+    "dark": "#4338CA"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -28,6 +28,28 @@
               "user-guides/agent/settings",
               "user-guides/agent/activity",
               "user-guides/agent/analytics"
+            ]
+          },
+          {
+            "group": "Deploy Your Agent",
+            "pages": [
+              "user-guides/deploy/introduction",
+              "user-guides/deploy/chat-widget",
+              "user-guides/deploy/whatsapp",
+              "user-guides/deploy/messenger",
+              "user-guides/deploy/instagram",
+              "user-guides/deploy/telegram",
+              "user-guides/deploy/shopify",
+              "user-guides/deploy/woocommerce"
+            ]
+          },
+          {
+            "group": "Product Catalog",
+            "pages": [
+              "user-guides/catalog/introduction",
+              "user-guides/catalog/products-and-variants",
+              "user-guides/catalog/importing",
+              "user-guides/catalog/image-search"
             ]
           },
           {

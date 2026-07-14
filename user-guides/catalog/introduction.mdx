@@ -1,0 +1,60 @@
+---
+title: "Product Catalog"
+description: "Give your agent a product catalog so it can recommend items, quote prices, and answer questions about what you sell."
+---
+
+The **Product Catalog** is a structured list of what you sell. Once your agent is trained on it, it can recommend products, quote prices, describe variants, and even match a photo a customer sends to the right item.
+
+Open your agent and go to **Training → Catalog** to manage it.
+
+<Frame caption="The Catalog page — your products, training status, and sources.">
+  <img src="/images/user-guides/catalog/overview.png" alt="ChatRos Catalog page with product table and Sources panel" />
+</Frame>
+
+## Why use a catalog?
+
+A catalog is more precise than plain text sources. Each product is a structured record — name, price, SKU, tags, images, and variants — so the agent gives accurate answers instead of paraphrasing a web page.
+
+<CardGroup cols={2}>
+  <Card title="Add products & variants" icon="tags" href="/user-guides/catalog/products-and-variants">
+    Add items by hand, including sizes, colors, and per‑variant prices and SKUs.
+  </Card>
+  <Card title="Import in bulk" icon="file-import" href="/user-guides/catalog/importing">
+    Import from a CSV, or sync live from Shopify, WooCommerce, Medusa, or Google Sheets.
+  </Card>
+  <Card title="Image product search" icon="image" href="/user-guides/catalog/image-search">
+    Let customers send a photo and have the agent find the matching product.
+  </Card>
+  <Card title="Deploy everywhere" icon="globe" href="/user-guides/deploy/introduction">
+    Your catalog powers answers on every connected channel.
+  </Card>
+</CardGroup>
+
+## How it fits together
+
+<Steps>
+  <Step title="Build your catalog">
+    Add products manually, import a CSV, or connect a store/spreadsheet source.
+  </Step>
+  <Step title="Train the agent on it">
+    Each product is trained so the agent can retrieve it. The Catalog page shows a **Training** status per product.
+  </Step>
+  <Step title="Keep it in sync">
+    Use **Sync** to pull the latest products from your connected sources whenever your store changes.
+  </Step>
+</Steps>
+
+## The Catalog toolbar
+
+At the top of the Catalog page you'll find:
+
+- **Add Item** — create a single product by hand.
+- **Import CSV** — bulk‑import from a spreadsheet file.
+- **Connect Source** — connect a store or spreadsheet. Once a source is connected, this button becomes **Sync**, which pulls the latest from every connected source (store first, then spreadsheet).
+- **Export CSV** — download your current catalog.
+
+You can search by **name, SKU, or tags**, and sort by name or price.
+
+<Card title="Add your first product" icon="plus" href="/user-guides/catalog/products-and-variants">
+  Start building your catalog one product at a time.
+</Card>

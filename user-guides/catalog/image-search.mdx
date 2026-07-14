@@ -1,0 +1,59 @@
+---
+title: "Image Product Search"
+description: "Let customers send a photo and have your agent find the matching product from your catalog."
+---
+
+With **image product search**, a customer can send a photo — *"Do you have this?"* — and your agent finds the closest matching products from your catalog. It works automatically once your products have images; there's no setting to switch on.
+
+{/* SHOT: catalog/image-search-chat.png | A chat where a customer sends a photo and the agent replies with matching products */}
+<Note>📸 Screenshot: a conversation where a customer sends a photo and the agent replies with matching products *(to be added)*.</Note>
+
+## How it works
+
+When you add or sync a product that has an image, ChatRos does two things behind the scenes:
+
+<Steps>
+  <Step title="Captions the image">
+    It generates a description of what's in the product photo (color, style, type of item).
+  </Step>
+  <Step title="Builds a searchable index">
+    That caption is combined with the product's title, tags, description, and variants into a single searchable record.
+  </Step>
+</Steps>
+
+When a customer sends a photo in chat, the agent describes that photo the same way and matches it against this index to surface the most similar products.
+
+<Note>
+  This happens automatically during training. Captions are only regenerated when a product's image actually changes, so re‑syncing your catalog stays fast.
+</Note>
+
+## Turn it on — just add images
+
+There's no toggle. To enable image search, make sure your products have images:
+
+- **Manual products** — upload images in the **Files** section when [adding a product](/user-guides/catalog/products-and-variants).
+- **Synced products** — Shopify, WooCommerce, and Medusa products bring their images automatically. CSV/Google Sheets rows can include an **imageUrl** column.
+
+After adding images, make sure the products finish **training** (check the Training column on the Catalog page).
+
+## Get the best results
+
+<AccordionGroup>
+  <Accordion title="Use clear, representative photos" icon="camera">
+    A clean product shot on a plain background matches better than a busy lifestyle photo. The image the customer sends should resemble the product image in your catalog.
+  </Accordion>
+  <Accordion title="Add descriptive tags" icon="tags">
+    Tags like `red, sneakers, running` sharpen matches, especially when several products look alike.
+  </Accordion>
+  <Accordion title="Keep variants accurate" icon="layer-group">
+    Since variant options and SKUs are part of the index, a customer's photo can be matched to a specific color or style.
+  </Accordion>
+</AccordionGroup>
+
+## Works on every channel
+
+Because image search is part of the agent, it works wherever the agent is deployed — the [chat widget](/user-guides/deploy/chat-widget), [WhatsApp](/user-guides/deploy/whatsapp), [Messenger](/user-guides/deploy/messenger), and [Instagram](/user-guides/deploy/instagram) all accept customer photos.
+
+<Card title="Build your catalog" icon="tags" href="/user-guides/catalog/introduction">
+  Image search is only as good as your catalog — add products and images to power it.
+</Card>
