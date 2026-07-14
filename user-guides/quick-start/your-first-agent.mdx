@@ -1,221 +1,179 @@
 ---
 title: 'Build Your First AI Agent'
-description: 'Create, train, and deploy your first AI Agent in under 5 minutes'
+description: 'Create, train, test, and deploy your first AI Agent in under 5 minutes'
 ---
 
-Create, train, and deploy your first AI Agent in under 5 minutes. Follow this step-by-step guide to get your intelligent assistant live on your website.
+Create, train, test, and deploy your first AI Agent in about 5 minutes. This guide walks you through the ChatRos onboarding wizard and gets your assistant live on your website.
 
 ## Prerequisites
 
-You'll need an active ChatRos account to follow this guide. [Sign up here](https://chatros.com/register) if you haven't already.
+You'll need an active ChatRos account. [Sign up here](https://chatros.com/register) if you haven't already.
 
 ## Overview
 
-Here's what we'll accomplish in this guide:
+<Steps>
+  <Step title="Create your agent">
+    A short guided wizard sets up a new AI agent for your business.
+  </Step>
+  <Step title="Add training data">
+    Give the agent knowledge — files, text, your website, Q&A, or a product catalog.
+  </Step>
+  <Step title="Test it">
+    Chat with your agent to check its answers before going live.
+  </Step>
+  <Step title="Deploy">
+    Add it to your website (and any other channel) in a couple of clicks.
+  </Step>
+</Steps>
 
-1. **Create & Train Your Agent** - Set up a new AI Agent and train it using your website or documents
-2. **Test & Optimize** - Use the test page to test responses and fine-tune performance using the Compare feature
-3. **Deploy to your Website** - Add your AI Agent to your website with a simple embed code
-
-**Estimated time:** 5 minutes from start to finish
+**Estimated time:** ~5 minutes.
 
 ---
 
-## Step 1: Create & Train Your AI Agent
+## Step 1 — Create your agent
 
-### Navigate to Your Dashboard
+From your dashboard, click **Create New Agent**.
 
-After signing into your ChatRos account, go to your main dashboard. Click the **"Create New Agent"** button to get started.
+<Frame caption="Your workspace's agents. Click “Create New Agent” to begin.">
+  <img src="/images/user-guides/quick-start/first-agent/create-agent.png" alt="ChatRos agents page with the Create New Agent button" />
+</Frame>
 
-<img src="/images/user-guides/quick-start/first-agent/create-agent.png" alt="ChatRos dashboard with Create New Agent button highlighted" />
+This opens a short **5‑step wizard**.
 
-### Select Agent Mode
+<Steps>
+  <Step title="Welcome">
+    A quick intro showing your plan and how many agents it includes. Click **Let's go**.
 
-Choose the mode that best fits your needs. Select your preferred agent configuration to continue.
+    <Frame>
+      <img src="/images/user-guides/quick-start/first-agent/welcome.png" alt="Onboarding wizard welcome step" />
+    </Frame>
+  </Step>
+  <Step title="Tell us about your business">
+    Enter your **business name** and pick the type (Online shop, Services, Software/SaaS, Education, or Something else). Your agent uses this to introduce your business and answer accurately. Click **Continue**.
 
-<img src="/images/user-guides/quick-start/first-agent/choose-mode.png" alt="Agent mode selection screen" />
+    <Frame>
+      <img src="/images/user-guides/quick-start/first-agent/business.png" alt="Business name and type step" />
+    </Frame>
+  </Step>
+  <Step title="Choose a handling mode">
+    Pick how conversations are handled — you can change this anytime.
 
-### Name Your Agent
+    - **AI Handling** *(recommended)* — your agent answers customers automatically, 24/7, and you can take over any conversation.
+    - **Manual Handling** — you and your team reply to every message; the agent just collects them into one inbox.
 
-Enter a name for your AI Agent. Choose a name that reflects its purpose or your brand.
+    <Frame>
+      <img src="/images/user-guides/quick-start/first-agent/handling-mode.png" alt="AI Handling vs Manual Handling step" />
+    </Frame>
+  </Step>
+  <Step title="Name your agent">
+    Set the **agent name** customers see in the chat, and optionally note what it helps with. Click **Save agent**.
 
-<img src="/images/user-guides/quick-start/first-agent/agent-name.png" alt="Agent name input screen" />
+    <Frame>
+      <img src="/images/user-guides/quick-start/first-agent/agent-name.png" alt="Name your agent step" />
+    </Frame>
+  </Step>
+</Steps>
 
-### Configure Manual Mode (If Selected)
+Your agent is created. Next, give it something to learn from.
 
-If you chose manual mode, you'll see deployment options. Configure your preferred deployment settings.
+---
 
-<img src="/images/user-guides/quick-start/first-agent/deploy.png" alt="Manual mode deployment configuration" />
+## Step 2 — Add training data
 
-### Choose Your Training Data
+Open **Data Sources** in the sidebar. This is where you add everything your agent learns from, and where you train it.
 
-Your AI Agent needs information to learn from. You can train it using various data sources:
+<Frame caption="The Data Sources hub — add sources, then train your agent.">
+  <img src="/images/user-guides/quick-start/first-agent/data-sources.png" alt="Data Sources page with file upload, text, Q&A, and catalog sources" />
+</Frame>
+
+Pick whichever sources fit your business — you can combine several:
 
 <Tabs>
   <Tab title="Files">
-    **Upload your documents**
+    Upload **PDF, DOC, TXT, or CSV** files — manuals, FAQs, product sheets, policies.
 
-    Train your agent on your documents.
-
-    **Best for:** Business documents, manuals, FAQs, product information, etc.
-
-    <img src="/images/user-guides/quick-start/first-agent/file-upload.png" alt="File upload interface for training data" />
+    <Frame>
+      <img src="/images/user-guides/quick-start/first-agent/file-upload.png" alt="File Upload page" />
+    </Frame>
   </Tab>
-
-  <Tab title="Raw Text">
-    **Paste text directly**
-
-    Add text content directly without uploading files.
-
-    **Best for:** Copy-pasted content, quick testing, formatted text snippets.
-
-    <img src="/images/user-guides/quick-start/first-agent/text-content.png" alt="Text content input interface" />
+  <Tab title="Text Content">
+    Paste text directly — great for quick knowledge‑base snippets without a file.
   </Tab>
-
   <Tab title="Website">
-    **Crawl your website**
-
-    Automatically scrape content from your website URL.
-
-    **Best for:** Documentation sites, blogs, knowledge bases, product pages.
-
-    <img src="/images/user-guides/quick-start/first-agent/website.png" alt="Website crawling interface" />
-
-    **Individual Links**
-
-    You can also add specific individual page URLs instead of crawling the entire site. This gives you precise control over which pages to include in your training data.
-
-    <img src="/images/user-guides/quick-start/first-agent/individual.png" alt="Individual link input interface" />
+    Crawl your site or add specific page URLs — ideal for docs, blogs, and product pages.
   </Tab>
-
-  <Tab title="Q&A">
-    **Add question-answer pairs**
-
-    Create specific Q&A pairs for precise responses.
-
-    **Best for:** FAQs, common customer questions, specific scenarios.
-
-    <img src="/images/user-guides/quick-start/first-agent/qa.png" alt="Q&A pairs input interface" />
+  <Tab title="Q&A Pairs">
+    Add question‑and‑answer pairs for precise, controlled responses to common questions.
+  </Tab>
+  <Tab title="Catalog">
+    Add your products so the agent can recommend items and answer price/variant questions. See [Product Catalog](/user-guides/catalog/introduction).
   </Tab>
 </Tabs>
 
-### Review & Start Training
+### Train the agent
 
-Click **"Train Agent"** to begin the training process.
-
-<img src="/images/user-guides/quick-start/first-agent/train-agent.png" alt="Train Agent button to start training process" />
-
-Training typically takes 2-5 minutes depending on the amount of data. You can proceed to the next step while training completes.
+After adding sources, click **Train agent** (top‑right, or **Train now** in the banner). Training usually takes 2–5 minutes depending on how much data you added.
 
 <Note>
-**Character Limits:** Different plans have different character limits for training data. Check your plan if you hit any limits.
+  Whenever you add or change a source, the agent needs a retrain to learn it — a banner reminds you when training is pending.
 </Note>
 
-## Step 2: Test & Optimize Your AI Agent
+---
 
-### Access the Test Agent Page
+## Step 3 — Test your agent
 
-Once training begins, you can go to the **Test Agent** page - your testing environment where you can chat with your AI Agent and fine-tune it before making it live.
+Open **Test Agent** to chat with your agent in a live environment before deploying. Check its answers for accuracy, relevance, completeness, and tone.
 
-<img src="/images/user-guides/quick-start/first-agent/test-agent.png" alt="Test Agent page showing chat testing area" />
-
-### Evaluate Response Quality
-
-As you test, look for:
-
-- **Accuracy** - Are responses factually correct?
-- **Relevance** - Does it answer what was asked?
-- **Completeness** - Are responses comprehensive but concise?
-- **Tone** - Does it match your brand voice?
-
-## Step 3: Deploy to Your Website
-
-### Navigate to the Deploy Section
-
-Once you're satisfied with your AI Agent's responses, it's time to make it live! Navigate to the **"Deploy"** tab in the sidebar, and toggle the switch on the **"Chat widget"** card to enable the agent.
-
-<img src="/images/user-guides/quick-start/first-agent/deploy-website.png" alt="Deploy section showing Chat widget card with toggle switch to enable the agent" />
-
-<Warning>
-**Disabled vs Enabled:** Disabled agents are only accessible to workspace members. Enabled agents can be embedded on websites and accessed by anyone with the link.
-</Warning>
-
-### Choose Your Deployment Method
-
-ChatRos offers multiple deployment methods including chat widget, help page, and integrations with WhatsApp, WordPress, and other platforms.
-
-<img src="/images/user-guides/quick-start/first-agent/all-channel.png" alt="Deploy tab showing all available deployment channels" />
-
-In this guide, we'll use the **Chat widget** option as it's most common. Click on Manage on chat widget then select Embed.
-
-<img src="/images/user-guides/quick-start/first-agent/chat-widget.png" alt="Chat widget embed configuration" />
-
-### Get Your Embed Code
-
-In this guide we'll use the **Chat widget** option. Copy the provided JavaScript code snippet.
-
-<img src="/images/user-guides/quick-start/first-agent/widget-code.png" alt="JavaScript embed code ready to copy" />
-
-### Add Code to Your Website
-
-**1. Locate Your Site's HTML**
-
-Find where you can add JavaScript code to your website. This is usually in the `<head>` section or before the closing `</body>` tag.
+<Frame caption="Chat with your agent and confirm it answers well before going live.">
+  <img src="/images/user-guides/quick-start/first-agent/test-agent.png" alt="Test AI Agent page with chat and agent status" />
+</Frame>
 
 <Tip>
-**For fast loading:** Place the script just before the closing `</body>` tag to ensure your page content loads first, then the chat widget appears.
-
-**For immediate availability:** Place the script in the `<head>` section to load the chat widget as early as possible, though this may slightly delay your page's initial render.
+  Not happy with an answer? Add or refine a source (a Q&A pair is great for fixing a specific response), retrain, and test again.
 </Tip>
 
-**2. Paste the Code**
+---
 
-Copy and paste the embed script into your website's HTML. If you're using a CMS like WordPress, there's usually a "Custom HTML" or "Scripts" section.
+## Step 4 — Deploy
 
-**3. Save and Publish**
+Open **Deploy** to see every channel your agent can go live on — your website chat widget, a help page, WhatsApp, Messenger, Instagram, Telegram, and more.
 
-Save your changes and publish your website updates.
+<Frame caption="The Deploy page — connect any channel.">
+  <img src="/images/user-guides/deploy/all-channels.png" alt="Deploy page showing all channels" />
+</Frame>
 
-### Verify Installation
+The fastest way to go live is the **Chat Widget** on your website. Click **Configure Widget**, set the name, welcome message, colors, and position, and watch the live preview.
 
-Visit your website and look for the chat bubble. Click it to test the integration!
+<Frame caption="Configure the chat widget, with a live preview.">
+  <img src="/images/user-guides/deploy/widget-config.png" alt="Chat Widget configuration with live preview" />
+</Frame>
 
-<img src="/images/user-guides/quick-start/first-agent/verify-installation.png" alt="Live AI Agent chat bubble on a website" />
+Then open the **Widget Script** tab and copy the snippet:
 
-**Success!** Your AI Agent is now live and ready to help your website visitors.
+```html
+<script>
+    window.AIAgent = {
+        agentId: 'your-agent-id'
+    };
+</script>
+<script src="https://chatros.com/widget.min.js"></script>
+```
 
-Need more control over your widget? Check out our Developer Guides for more information on JavaScript embed, widget control options, and advanced features.
+<Warning>
+  Copy the snippet from your own dashboard — it contains your agent's unique ID. The example above is illustrative.
+</Warning>
 
-### Customize Appearance (Optional)
+Paste it into your website's HTML, just before the closing `</body>` tag, on every page where you want the widget. Save and publish, then reload your site — the chat bubble appears in the corner.
 
-Want to match your brand? Check out our settings guide for style and content customization.
+<Note>
+  On **Shopify** or **WooCommerce**? You don't paste code — install through the ChatRos app/plugin instead. See [Shopify](/user-guides/deploy/shopify) and [WooCommerce](/user-guides/deploy/woocommerce).
+</Note>
 
-<img src="/images/user-guides/quick-start/first-agent/customize.png" alt="Chat interface customization options" />
-
-#### Branding Options
-
-- Upload custom chat bubble icon
-- Change bubble colors to match your brand
-- Customize welcome messages
-- Set initial questions users can click
-
-#### Behavior Settings
-
-- Auto-open chat after delay
-- Collect user feedback
-- Regenerate messages
+---
 
 ## 🎉 Congratulations!
 
-You've successfully created, trained, tested, and deployed your first AI Agent! Here's what you've accomplished:
-
-✅ Created an intelligent AI Agent trained on your data
-
-✅ Tested and validated response quality
-
-✅ Deployed it live on your website
-
-✅ Made it accessible to your visitors 24/7
+You've created, trained, tested, and deployed your first AI Agent. It's now live and ready to help your visitors 24/7.
 
 ### What's Next?
 
@@ -224,7 +182,7 @@ You've successfully created, trained, tested, and deployed your first AI Agent! 
     Track conversations and optimize your AI Agent's performance
   </Card>
   <Card title="Deploy Everywhere" icon="globe" href="/user-guides/deploy/introduction">
-    Connect your agent to your website, WhatsApp, Messenger, and more
+    Connect your agent to WhatsApp, Messenger, Instagram, Telegram, and more
   </Card>
   <Card title="Best Practices" icon="lightbulb" href="/user-guides/quick-start/best-practices">
     Learn proven strategies to maximize your AI Agent's effectiveness
@@ -233,7 +191,3 @@ You've successfully created, trained, tested, and deployed your first AI Agent! 
     Let your agent recommend products, prices, and variants from your catalog
   </Card>
 </CardGroup>
-
----
-
-**Need help?** Our support workspace is here to assist you. Visit our Help Center or check out the FAQ section for common questions.

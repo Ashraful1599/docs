@@ -53,14 +53,6 @@
             ]
           },
           {
-            "group": "Automations",
-            "pages": [
-              "user-guides/automations/introduction",
-              "user-guides/automations/building-workflows",
-              "user-guides/automations/templates"
-            ]
-          },
-          {
             "group": "Integrations",
             "pages": [
               "user-guides/integrations/klaviyo",
